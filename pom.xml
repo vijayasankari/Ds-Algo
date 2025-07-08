@@ -4,14 +4,7 @@
   <artifactId>Ds_AlGO_BDD</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
-  
-  
-  
-  
-  
   <dependencies>
-  
-  
   <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
 <dependency>
     <groupId>org.seleniumhq.selenium</groupId>
