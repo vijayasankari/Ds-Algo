@@ -8,11 +8,11 @@ import io.cucumber.testng.AbstractTestNGCucumberTests;
 
 //@RunWith(Cucumber.class)//Junit execution
 	@CucumberOptions(
-			plugin = {"pretty","html:target/SDET219.html"},//reporting purpose
+			plugin = {"pretty","html:target/DsAlgoTryCatchers.html"},//reporting purpose
 			monochrome = false,//console output color
 			tags = "@HomePageValidation",//tags from feature file
 			features = {"src/test/resources/features"},//location of feature files
-			glue = {"stepDefinitions", "Hooks"} //location to step definition files
+			glue = {"Step_Definitions", "Hooks"} //location to step definition files
 			)
 	public class TestRunner extends AbstractTestNGCucumberTests {
 		
