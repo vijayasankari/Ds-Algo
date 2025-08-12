@@ -77,4 +77,5 @@ Feature: Stack Module
   @Stack-Logout
   Scenario: User logs out from Stack Page
     When User clicks Signout button from Stack page
-    Then User is signedout successfully from the Stack page of DS-Algo Application
+    Then User should be navigated to home page
+    And User should see the message "Logged out successfully"
