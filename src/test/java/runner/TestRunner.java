@@ -10,9 +10,9 @@ import io.cucumber.testng.AbstractTestNGCucumberTests;
 	@CucumberOptions(
 			plugin = {"pretty","html:target/DsAlgoTryCatchers.html"},//reporting purpose
 			monochrome = false,//console output color
-			tags = "@HomePageValidation",//tags from feature file
+			tags = "@Stack-OtherTopicsNavigation",//tags from feature file
 			features = {"src/test/resources/features"},//location of feature files
-			glue = {"Step_Definitions", "Hooks"} //location to step definition files
+			glue = {"stepDefinitions", "Hooks"} //location to step definition files
 			)
 	public class TestRunner extends AbstractTestNGCucumberTests {
 		
