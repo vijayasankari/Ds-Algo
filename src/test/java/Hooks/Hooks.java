@@ -5,6 +5,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 
 import DriverFactory.driverFactory;
+import Utilities.configReader;
 import io.cucumber.java.After;
 import io.cucumber.java.AfterStep;
 import io.cucumber.java.Before;
@@ -14,7 +15,6 @@ import io.qameta.allure.Allure;
 public class Hooks {
 
 	public static WebDriver driver;
-	// private static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 
 	@Before(order = 0)
 	public void setUp() {
@@ -22,6 +22,12 @@ public class Hooks {
 			driver = driverFactory.getDriver();
 		}
 		System.out.println("Hooks.driver is: " + driver);
+	}
+	
+	@Before("@Login")
+	public void loginFilePathSetup() {
+		configReader.filepath = "/src/test/resources/TestData/TestData.xlsx"; 
+		configReader.SheetName = "LoginCredentials";
 	}
 
 	@After

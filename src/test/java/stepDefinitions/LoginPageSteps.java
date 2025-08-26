@@ -1,6 +1,5 @@
 package stepDefinitions;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.testng.Assert;
@@ -10,8 +9,8 @@ import PageObjects.LaunchPage;
 import PageObjects.LoginPage;
 import PageObjects.PageObjectManager;
 import PageObjects.homePO;
+import Utilities.configReader;
 import io.cucumber.datatable.DataTable;
-import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -23,8 +22,7 @@ public class LoginPageSteps {
 	private LaunchPage launchPage;
 	private LoginPage login;
 
-	@Before(order = 1) // This @Before runs before each scenario, after Hooks.setUp()
-	public void setUpPageObjects() {
+	public LoginPageSteps() {
 		pageObjectManager = new PageObjectManager(Hooks.driver);
 		homePage = pageObjectManager.getHomePage();
 		launchPage = pageObjectManager.getLaunchPage();
@@ -37,25 +35,15 @@ public class LoginPageSteps {
 		homePage.clickSignInLink();
 	}
 
-	@When("user clicks login button after providing {string} and {string}")
-	public void user_clicks_login_button_after_providing_and(String username, String password) {
+	@When("user clicks login button after providing empty {string} or {string}")
+	public void user_clicks_login_button_after_providing_empty_or(String username, String password) {
 		login.loginAuthentication(username, password);
 	}
 
 	@Then("Hover text message as {string} appears below respective {string} textbox")
 	public void hover_text_message_as_appears_below_respective_textbox(String expectedHoverText,
 			String hoverTextField) {
-		String actualHoverText;
-		switch (hoverTextField) {
-		case "Username":
-			actualHoverText = login.usernameHoverText();
-			Assert.assertEquals(actualHoverText, expectedHoverText, "Hover Text mismatch");
-			break;
-		case "Password":
-			actualHoverText = login.passwordHoverText();
-			Assert.assertEquals(actualHoverText, expectedHoverText, "Hover Text mismatch");
-			break;
-		}
+		Assert.assertEquals(login.hoverText(hoverTextField), expectedHoverText, "Hover Text mismatch");
 	}
 
 	@When("user clicks login button after entering invalid credentials {string} and {string}")
@@ -112,47 +100,19 @@ public class LoginPageSteps {
 
 	@Then("user should able to see following six options")
 	public void user_should_able_to_see_following_six_options(DataTable dropdownValues) {
-		List<List<String>> expectedTable = dropdownValues.asLists(String.class);
-		List<String> expectedDropdownOptions = new ArrayList<>();
-		for (int i = 1; i < expectedTable.size(); i++) {
-			expectedDropdownOptions.add(expectedTable.get(i).get(0)); // Get the value from the first column
-		}
-		List<String> actualDropdownOptions = login.fetchDataStructuresDropdownValues();
+		List<String> expectedDropdownOptions = dropdownValues.asList(String.class);
+		List<String> actualDropdownOptions = homePage.fetchDataStructuresDropdownValues();
 		for (int i = 0; i < expectedDropdownOptions.size(); i++) {
 			String expectedValue = expectedDropdownOptions.get(i);
 			String actualValue = actualDropdownOptions.get(i);
-			Assert.assertEquals(expectedValue, actualValue, "Mismatch at index " + "i");
+			Assert.assertEquals(actualValue, expectedValue, "Mismatch at index " + "i");
 		}
 	}
 
-	@When("user selects Arrays from login page")
-	public void user_selects_arrays_from_login_page() {
-		login.clickArrayInDropdown();
-	}
-
-	@When("user selects Linked List from login page")
-	public void user_selects_linked_list_from_login_page() {
-		login.clickLinkedListInDropdown();
-	}
-
-	@When("user selects Stack from login page")
-	public void user_selects_stack_from_login_page() {
-		login.clickStackInDropdown();
-	}
-
-	@When("user selects Queue from login page")
-	public void user_selects_queue_from_login_page() {
-		login.clickQueueInDropdown();
-	}
-
-	@When("user selects Tree from login page")
-	public void user_selects_tree_from_login_page() {
-		login.clickTreeInDropdown();
-	}
-
-	@When("user selects Graph from login page")
-	public void user_selects_graph_from_login_page() {
-		login.clickGraphInDropdown();
+	@When("user selects {string} from login page")
+	public void user_selects_from_login_page(String moduleName) {
+		login.clickDataStructuresDropdown();
+		login.selectDropdownValue(moduleName);
 	}
 
 	@Then("user should be navigated to the Home page")
@@ -168,7 +128,7 @@ public class LoginPageSteps {
 
 	@When("user clicks login button after entering username and password read from excel")
 	public void user_clicks_login_button_after_entering_username_and_password_read_from_excel() {
-		login.fetchLoginCredentialsAndLogin();
+		login.fetchLoginCredentialsAndLogin(configReader.filepath, configReader.SheetName);
 	}
 
 	@Then("user should be navigated to dsAlgo Home Page")
@@ -179,7 +139,6 @@ public class LoginPageSteps {
 	@Then("message should be displayed {string}")
 	public void message_should_be_displayed(String expectedConfirmationMessage) {
 		String actualConfirmationMessage = homePage.messageToUser();
-		Assert.assertEquals(expectedConfirmationMessage, actualConfirmationMessage, "Confirmation message incorrect");
+		Assert.assertEquals(actualConfirmationMessage, expectedConfirmationMessage, "Confirmation message incorrect");
 	}
-
 }
