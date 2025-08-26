@@ -15,7 +15,7 @@ public class LaunchPage {
 	private WebDriverWait wait;
 
 	@FindBy(xpath = "//*[text()='Get Started']")
-	WebElement GetStartedButton;
+	private WebElement GetStartedButton;
 
 	public LaunchPage(WebDriver driver) { // Pass the driver instance to the constructor
 		this.driver = driver;

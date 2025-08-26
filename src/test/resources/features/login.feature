@@ -8,7 +8,7 @@ Feature: Login page validation
 
   @LoginPageHoverTextValidation
   Scenario Outline: Verify that user receives hovertext message for all empty fields during Login
-    When user clicks login button after providing "<username>" and "<password>"
+    When user clicks login button after providing empty "<username>" or "<password>"
     Then Hover text message as "Please fill out this field." appears below respective "<field>" textbox
 
     Examples: 
@@ -52,7 +52,6 @@ Feature: Login page validation
   Scenario: Verify that user is able to view dropdown options for Data Structures dropdown on Login page
     When user clicks the Data Structures dropdown from the login page
     Then user should able to see following six options
-      | Option      |
       | Arrays      |
       | Linked List |
       | Stack       |
@@ -75,7 +74,7 @@ Feature: Login page validation
       | Tree            |
       | Graph           |
 
-  @LoginPageSucessfulLogin
+  @SuccessfulLogin @Login
   Scenario: Verify that user able to land on Home page after entering valid Username and Password fields
     When user clicks login button after entering username and password read from excel
     Then user should be navigated to dsAlgo Home Page

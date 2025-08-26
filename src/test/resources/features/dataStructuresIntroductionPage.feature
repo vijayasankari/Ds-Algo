@@ -4,44 +4,52 @@ Feature: Data Structures Introduction Page validation
 
   Background: 
     Given User logged into DsAlgo portal
-    And clicks Data Structures-Introduction Get Started button
+    And clicks "Data Structures-Introduction" Get Started button
 
-  @TimeComplexityPage
+  @DataStructures @TimeComplexityPage @Login
   Scenario: Verify that user is able to navigate to Time Complexity page
     When The user clicks Time Complexity hyperlink
     Then The user should be redirected to Time Complexity page of Data structures-Introduction
 
-  @DataStructuresPracticeQuestions
+  @DataStructures @PracticeQuestions @Login
   Scenario: Verify that user is able to navigate to Practice Questions page
-    When The user clicks the Practice Questions hyperlink from Time Complexity page
+    When the user navigates to Time Complexity page
+    And clicks the Practice Questions hyperlink
     Then The user should be redirected to Practice Questions page of Data structures-Introduction
 
-  @DataStructuresTryEditor
+  @DataStructures @TryEditor @Login
   Scenario: Verify that user is able to navigate to try Editor page
-    When The user clicks Try Here button from Time Complexity page
+    When the user navigates to Time Complexity page
+    And clicks on Try Here link
     Then The user should be redirected to a page having an try Editor with a Run button to test
 
-  @DataStructuresTryEditorValidation
-  Scenario: Verify that user able to validate python code
-    Given User clicks on Try here button in the Time complexity page
-    When User enters python code in try editor from excel sheet
-    Then The user should able to see the result
+  @DataStructures @TryEditorValidation @Login
+  Scenario Outline: Verify that user able to validate python code
+    When the user navigates to Time Complexity page
+    And user clicks on Try here link
+    And User enters "<python code>" in try editor from excel sheet
+    Then The user should able to see the "<result>"
 
-  @DataStructuresPageDropDownSelection
+    Examples: 
+      | python code |  | result         |
+      | InvalidCode |  | Alert Message  |
+      | ValidCode   |  | Console Output |
+
+  @DataStructures @DropDownSelection @Login
   Scenario Outline: Verify that on clicking dropdown values user able to navigate to module pages
     When The user selects "<module>" from the Data Structures dropdown of Data Structures Introduction page
     Then The user should be able to navigate to respective "<module>" page
 
     Examples: 
       | module      |
-      | Array       |
+      | Arrays      |
       | Linked List |
       | Stack       |
       | Queue       |
       | Tree        |
       | Graph       |
 
-  @DataStructuresPageUsernameHyperlink
+  @DataStructures @UsernameHyperlink @Login
   Scenario: Verify that page is reloaded on clicking username hyperlink on the top right
     When The user clicks on username hyperlink displayed at the top right corner
     Then The user should be able to see that the current page is reloaded

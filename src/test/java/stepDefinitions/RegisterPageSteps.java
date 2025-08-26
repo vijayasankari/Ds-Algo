@@ -1,6 +1,5 @@
 package stepDefinitions;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.testng.Assert;
@@ -10,8 +9,8 @@ import PageObjects.LaunchPage;
 import PageObjects.PageObjectManager;
 import PageObjects.RegisterPage;
 import PageObjects.homePO;
+import Utilities.configReader;
 import io.cucumber.datatable.DataTable;
-import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -23,8 +22,7 @@ public class RegisterPageSteps {
 	private LaunchPage launchPage;
 	private RegisterPage register;
 
-	@Before(order = 1)
-	public void setUpPageObjects() {
+	public RegisterPageSteps() {
 		pageObjectManager = new PageObjectManager(Hooks.driver);
 		homePage = pageObjectManager.getHomePage();
 		launchPage = pageObjectManager.getLaunchPage();
@@ -46,21 +44,7 @@ public class RegisterPageSteps {
 	@Then("Hover text message as {string} should be displayed for respective {string} textbox")
 	public void hover_text_message_as_should_be_displayed_for_respective_textbox(String expectedHoverText,
 			String hoverTextField) {
-		String actualHoverText;
-		switch (hoverTextField) {
-		case "Username":
-			actualHoverText = register.usernameHoverText();
-			Assert.assertEquals(actualHoverText, expectedHoverText, "Hover Text mismatch");
-			break;
-		case "Password":
-			actualHoverText = register.passwordHoverText();
-			Assert.assertEquals(actualHoverText, expectedHoverText, "Hover Text mismatch");
-			break;
-		case "PasswordConfirmation":
-			actualHoverText = register.passwordConfirmationHoverText();
-			Assert.assertEquals(actualHoverText, expectedHoverText, "Hover Text mismatch");
-			break;
-		}
+		Assert.assertEquals(register.hoverText(hoverTextField), expectedHoverText, "Hover Text mismatch");
 	}
 
 	@Then("User should receive {string} message for respective field")
@@ -112,12 +96,8 @@ public class RegisterPageSteps {
 
 	@Then("user should see the following options")
 	public void the_user_should_see_the_following_options(DataTable dropdownValues) {
-		List<List<String>> expectedTable = dropdownValues.asLists(String.class);
-		List<String> expectedDropdownOptions = new ArrayList<>();
-		for (int i = 1; i < expectedTable.size(); i++) {
-			expectedDropdownOptions.add(expectedTable.get(i).get(0)); // Get the value from the first column
-		}
-		List<String> actualDropdownOptions = register.fetchDataStructuresDropdownValues();
+		List<String> expectedDropdownOptions = dropdownValues.asList(String.class);
+		List<String> actualDropdownOptions = homePage.fetchDataStructuresDropdownValues();
 		for (int i = 0; i < expectedDropdownOptions.size(); i++) {
 			String expectedValue = expectedDropdownOptions.get(i);
 			String actualValue = actualDropdownOptions.get(i);
@@ -125,9 +105,10 @@ public class RegisterPageSteps {
 		}
 	}
 
-	@When("The user selects Arrays values")
-	public void the_user_selects_arrays_values() {
-		register.clickArrayInDropdown();
+	@When("The user selects {string} values")
+	public void the_user_selects_values(String moduleName) {
+		register.clickDataStructuresDropdown();
+		register.selectDropdownValue(moduleName);
 	}
 
 	@Then("The user should be navigated to Home page")
@@ -140,40 +121,15 @@ public class RegisterPageSteps {
 		Assert.assertEquals(register.warningMessage(), expectedWarningMessage, "Warning message mismatch");
 	}
 
-	@When("The user selects Linked List values")
-	public void the_user_selects_linked_list_values() {
-		register.clickLinkedListInDropdown();
-	}
-
-	@When("The user selects Stack values")
-	public void the_user_selects_stack_values() {
-		register.clickStackInDropdown();
-	}
-
-	@When("The user selects Queue values")
-	public void the_user_selects_queue_values() {
-		register.clickQueueInDropdown();
-	}
-
-	@When("The user selects Tree values")
-	public void the_user_selects_tree_values() {
-		register.clickTreeInDropdown();
-	}
-
-	@When("The user selects Graph values")
-	public void the_user_selects_graph_values() {
-		register.clickGraphInDropdown();
-	}
-
 	@When("The user clicks Register button after entering valid values from excel sheet")
 	public void the_user_clicks_register_button_after_entering_valid_values_from_excel_sheet() {
-		register.fetchRegistrationDetailsAndRegister();
+		configReader.SheetName = "SuccessfulRegistration";
+		register.fetchRegistrationDetailsAndRegister(configReader.filepath, configReader.SheetName);
 	}
 
 	@Then("The user should be redirected to Home Page of DS Algo")
 	public void the_user_should_be_redirected_to_home_page_of_ds_algo() {
 		Assert.assertEquals(register.getTitleCurrentPage().trim(), "NumpyNinja", "User is not redirected to Home page");
-
 	}
 
 	@Then("message should be displayed as {string}")

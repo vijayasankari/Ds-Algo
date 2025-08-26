@@ -10,7 +10,6 @@ import PageObjects.LaunchPage;
 import PageObjects.PageObjectManager;
 import PageObjects.homePO;
 import io.cucumber.datatable.DataTable;
-import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -21,8 +20,7 @@ public class HomePageBeforeSignInSteps {
 	private homePO homePage;
 	private LaunchPage launchPage;
 
-	@Before(order = 1) // This @Before runs before each scenario, after Hooks.setUp()
-	public void setUpPageObjects() {
+	public HomePageBeforeSignInSteps() {
 		pageObjectManager = new PageObjectManager(Hooks.driver);
 		homePage = pageObjectManager.getHomePage();
 		launchPage = pageObjectManager.getLaunchPage();
@@ -71,74 +69,29 @@ public class HomePageBeforeSignInSteps {
 
 	@Then("user should see the following options:")
 	public void the_user_should_see_the_following_options(DataTable dropdownValues) {
-		List<List<String>> expectedTable = dropdownValues.asLists(String.class);
-		List<String> expectedDropdownOptions = new ArrayList<>();
-		for (int i = 1; i < expectedTable.size(); i++) {
-			expectedDropdownOptions.add(expectedTable.get(i).get(0)); // Get the value from the first column
-		}
+		List<String> expectedDropdownOptions = dropdownValues.asList(String.class);
 		List<String> actualDropdownOptions = homePage.fetchDataStructuresDropdownValues();
 		for (int i = 0; i < expectedDropdownOptions.size(); i++) {
 			String expectedValue = expectedDropdownOptions.get(i);
 			String actualValue = actualDropdownOptions.get(i);
-			Assert.assertEquals(expectedValue, actualValue, "Mismatch at index " + "i");
+			Assert.assertEquals(actualValue, expectedValue, "Mismatch at index " + "i");
 		}
 	}
 
 	@When("The user selects {string} from the drop down")
 	public void the_user_selects_from_the_drop_down(String dropdownSelection) {
-		switch (dropdownSelection) {
-		case "Arrays":
-			homePage.clickArrayInDropdown();
-			break;
-		case "Linked List":
-			homePage.clickLinkedListInDropdown();
-			break;
-		case "Stack":
-			homePage.clickStackInDropdown();
-			break;
-		case "Queue":
-			homePage.clickQueueInDropdown();
-			break;
-		case "Tree":
-			homePage.clickTreeInDropdown();
-			break;
-		case "Graph":
-			homePage.clickGraphInDropdown();
-			break;
-		}
+		homePage.clickDataStructuresDropdown();
+		homePage.selectDropdownValue(dropdownSelection);
 	}
 
 	@Then("The user should able to see warning message as {string}")
 	public void the_user_should_able_to_see_warning_message_as(String expectedWarningMessage) {
 		String actualWarningMessage = homePage.messageToUser();
-		Assert.assertEquals(expectedWarningMessage, actualWarningMessage, "Warning message mismatch");
+		Assert.assertEquals(actualWarningMessage, expectedWarningMessage, "Warning message mismatch");
 	}
 
 	@When("The user clicks Get Started button of {string} on the homepage")
 	public void the_user_clicks_get_started_button_of_on_the_homepage(String moduleSelection) {
-		switch (moduleSelection) {
-		case "Data Structures-Introduction":
-			homePage.clickDataStructuresGetStartedButton();
-			break;
-		case "Array":
-			homePage.clickArrayGetStartedButton();
-			break;
-		case "Linked List":
-			homePage.clickLinkedListGetStartedButton();
-			break;
-		case "Stack":
-			homePage.clickStackGetStartedButton();
-			break;
-		case "Queue":
-			homePage.clickQueueGetStartedButton();
-			break;
-		case "Tree":
-			homePage.clickTreeGetStartedButton();
-			break;
-		case "Graph":
-			homePage.clickGraphGetStartedButton();
-			break;
-		}
+		homePage.clickGetStarted(moduleSelection);
 	}
-
 }
