@@ -10,6 +10,9 @@ public class PageObjectManager {
 	private RegisterPage register;
 	private LoginPage loginPage;
 	private DataStructuresPage dataStructuresPage;
+	
+	private StackPageObject stackPageObject;
+	
 	// private TryHereEditor tryHereEditor;
 
 	public PageObjectManager(WebDriver driver) {
@@ -56,4 +59,10 @@ public class PageObjectManager {
 	 * tryHereEditor = new TryHereEditor(driver); } return tryHereEditor; }
 	 */
 
+	public StackPageObject getStackPage() {
+		if (stackPageObject==null) {
+			stackPageObject=new StackPageObject(driver);
+		}
+		return stackPageObject;
+	}
 }

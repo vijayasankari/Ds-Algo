@@ -54,7 +54,7 @@ public class excelReader {
 				
 				for(int j=0;j<colCount;j++) {
 					String value=(String) fetchedData[i][j];
-					System.out.println("value is"+value);
+					//System.out.println("value is"+value);
 					if (value.equalsIgnoreCase(codeType)) {
 						code=(String) fetchedData[i+1][j];
 						
