@@ -55,11 +55,19 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
+<<<<<<< HEAD
 <td>Tests passed/Failed/Skipped:</td><td>6/0/0</td>
 </tr><tr>
 <td>Started on:</td><td>Mon Aug 25 14:47:55 EDT 2025</td>
 </tr>
 <tr><td>Total time:</td><td>24 seconds (24433 ms)</td>
+=======
+<td>Tests passed/Failed/Skipped:</td><td>12/9/0</td>
+</tr><tr>
+<td>Started on:</td><td>Mon Aug 25 22:04:57 EDT 2025</td>
+</tr>
+<tr><td>Total time:</td><td>67 seconds (67671 ms)</td>
+>>>>>>> main
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,6 +75,216 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
+<<<<<<< HEAD
+=======
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Field level validation for username and password in registration page", "Registration page validation"</td>
+<td><div><pre>java.lang.AssertionError: Alert message is incorrect expected [Invalid Username] but found [password_mismatch:The two password fields didn’t match.]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1590)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+	at org.testng.Assert.assertEquals(Assert.java:132)
+	at org.testng.Assert.assertEquals(Assert.java:656)
+	at stepDefinitions.RegisterPageSteps.user_should_receive_message_for_respective_field(RegisterPageSteps.java:53)
+	at ✽.User should receive &quot;Invalid Username&quot; message for respective field(file:///C:/Users/Lingesh%20Raja/git/Ds_AlGO_BDD/src/test/resources/features/registerPage.feature:22)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1062254208", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1062254208'><pre>java.lang.AssertionError: Alert message is incorrect expected [Invalid Username] but found [password_mismatch:The two password fields didn’t match.]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1590)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+	at org.testng.Assert.assertEquals(Assert.java:132)
+	at org.testng.Assert.assertEquals(Assert.java:656)
+	at stepDefinitions.RegisterPageSteps.user_should_receive_message_for_respective_field(RegisterPageSteps.java:53)
+	at ✽.User should receive &quot;Invalid Username&quot; message for respective field(file:///C:/Users/Lingesh%20Raja/git/Ds_AlGO_BDD/src/test/resources/features/registerPage.feature:22)
+</pre></div></td>
+<td>3</td>
+<td>runner.TestRunner@5c90e579</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user receives hovertext message for all empty fields during registration", "Registration page validation"</td>
+<td><div><pre>java.lang.AssertionError: Hover Text mismatch expected [Please fill out this field.] but found [Please fill in this field.]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1590)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+	at org.testng.Assert.assertEquals(Assert.java:132)
+	at org.testng.Assert.assertEquals(Assert.java:656)
+	at stepDefinitions.RegisterPageSteps.hover_text_message_as_should_be_displayed_for_respective_textbox(RegisterPageSteps.java:47)
+	at ✽.Hover text message as &quot;Please fill out this field.&quot; should be displayed for respective &quot;PasswordConfirmation&quot; textbox(file:///C:/Users/Lingesh%20Raja/git/Ds_AlGO_BDD/src/test/resources/features/registerPage.feature:11)
+</pre></div><a href='#' onClick='toggleBox("stack-trace2130400175", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2130400175'><pre>java.lang.AssertionError: Hover Text mismatch expected [Please fill out this field.] but found [Please fill in this field.]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1590)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+	at org.testng.Assert.assertEquals(Assert.java:132)
+	at org.testng.Assert.assertEquals(Assert.java:656)
+	at stepDefinitions.RegisterPageSteps.hover_text_message_as_should_be_displayed_for_respective_textbox(RegisterPageSteps.java:47)
+	at ✽.Hover text message as &quot;Please fill out this field.&quot; should be displayed for respective &quot;PasswordConfirmation&quot; textbox(file:///C:/Users/Lingesh%20Raja/git/Ds_AlGO_BDD/src/test/resources/features/registerPage.feature:11)
+</pre></div></td>
+<td>2</td>
+<td>runner.TestRunner@5c90e579</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Field level validation for username and password in registration page", "Registration page validation"</td>
+<td><div><pre>java.lang.AssertionError: Alert message is incorrect expected [Invalid Username] but found [password_mismatch:The two password fields didn’t match.]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1590)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+	at org.testng.Assert.assertEquals(Assert.java:132)
+	at org.testng.Assert.assertEquals(Assert.java:656)
+	at stepDefinitions.RegisterPageSteps.user_should_receive_message_for_respective_field(RegisterPageSteps.java:53)
+	at ✽.User should receive &quot;Invalid Username&quot; message for respective field(file:///C:/Users/Lingesh%20Raja/git/Ds_AlGO_BDD/src/test/resources/features/registerPage.feature:22)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1372124716", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1372124716'><pre>java.lang.AssertionError: Alert message is incorrect expected [Invalid Username] but found [password_mismatch:The two password fields didn’t match.]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1590)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+	at org.testng.Assert.assertEquals(Assert.java:132)
+	at org.testng.Assert.assertEquals(Assert.java:656)
+	at stepDefinitions.RegisterPageSteps.user_should_receive_message_for_respective_field(RegisterPageSteps.java:53)
+	at ✽.User should receive &quot;Invalid Username&quot; message for respective field(file:///C:/Users/Lingesh%20Raja/git/Ds_AlGO_BDD/src/test/resources/features/registerPage.feature:22)
+</pre></div></td>
+<td>3</td>
+<td>runner.TestRunner@5c90e579</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user is able to land on Homepage after registration with valid fields", "Registration page validation"</td>
+<td><div><pre>java.lang.AssertionError: User is not redirected to Home page expected [NumpyNinja] but found [Registration]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1590)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+	at org.testng.Assert.assertEquals(Assert.java:132)
+	at org.testng.Assert.assertEquals(Assert.java:656)
+	at stepDefinitions.RegisterPageSteps.the_user_should_be_redirected_to_home_page_of_ds_algo(RegisterPageSteps.java:132)
+	at ✽.The user should be redirected to Home Page of DS Algo(file:///C:/Users/Lingesh%20Raja/git/Ds_AlGO_BDD/src/test/resources/features/registerPage.feature:82)
+</pre></div><a href='#' onClick='toggleBox("stack-trace935886796", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace935886796'><pre>java.lang.AssertionError: User is not redirected to Home page expected [NumpyNinja] but found [Registration]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1590)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+	at org.testng.Assert.assertEquals(Assert.java:132)
+	at org.testng.Assert.assertEquals(Assert.java:656)
+	at stepDefinitions.RegisterPageSteps.the_user_should_be_redirected_to_home_page_of_ds_algo(RegisterPageSteps.java:132)
+	at ✽.The user should be redirected to Home Page of DS Algo(file:///C:/Users/Lingesh%20Raja/git/Ds_AlGO_BDD/src/test/resources/features/registerPage.feature:82)
+</pre></div></td>
+<td>2</td>
+<td>runner.TestRunner@5c90e579</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user receives hovertext message for all empty fields during registration", "Registration page validation"</td>
+<td><div><pre>java.lang.AssertionError: Hover Text mismatch expected [Please fill out this field.] but found [Please fill in this field.]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1590)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+	at org.testng.Assert.assertEquals(Assert.java:132)
+	at org.testng.Assert.assertEquals(Assert.java:656)
+	at stepDefinitions.RegisterPageSteps.hover_text_message_as_should_be_displayed_for_respective_textbox(RegisterPageSteps.java:47)
+	at ✽.Hover text message as &quot;Please fill out this field.&quot; should be displayed for respective &quot;Username&quot; textbox(file:///C:/Users/Lingesh%20Raja/git/Ds_AlGO_BDD/src/test/resources/features/registerPage.feature:11)
+</pre></div><a href='#' onClick='toggleBox("stack-trace499609505", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace499609505'><pre>java.lang.AssertionError: Hover Text mismatch expected [Please fill out this field.] but found [Please fill in this field.]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1590)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+	at org.testng.Assert.assertEquals(Assert.java:132)
+	at org.testng.Assert.assertEquals(Assert.java:656)
+	at stepDefinitions.RegisterPageSteps.hover_text_message_as_should_be_displayed_for_respective_textbox(RegisterPageSteps.java:47)
+	at ✽.Hover text message as &quot;Please fill out this field.&quot; should be displayed for respective &quot;Username&quot; textbox(file:///C:/Users/Lingesh%20Raja/git/Ds_AlGO_BDD/src/test/resources/features/registerPage.feature:11)
+</pre></div></td>
+<td>3</td>
+<td>runner.TestRunner@5c90e579</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Field level validation for username and password in registration page", "Registration page validation"</td>
+<td><div><pre>java.lang.AssertionError: Alert message is incorrect expected [Invalid password] but found [password_mismatch:The two password fields didn’t match.]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1590)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+	at org.testng.Assert.assertEquals(Assert.java:132)
+	at org.testng.Assert.assertEquals(Assert.java:656)
+	at stepDefinitions.RegisterPageSteps.user_should_receive_message_for_respective_field(RegisterPageSteps.java:53)
+	at ✽.User should receive &quot;Invalid password&quot; message for respective field(file:///C:/Users/Lingesh%20Raja/git/Ds_AlGO_BDD/src/test/resources/features/registerPage.feature:22)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1916269505", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1916269505'><pre>java.lang.AssertionError: Alert message is incorrect expected [Invalid password] but found [password_mismatch:The two password fields didn’t match.]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1590)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+	at org.testng.Assert.assertEquals(Assert.java:132)
+	at org.testng.Assert.assertEquals(Assert.java:656)
+	at stepDefinitions.RegisterPageSteps.user_should_receive_message_for_respective_field(RegisterPageSteps.java:53)
+	at ✽.User should receive &quot;Invalid password&quot; message for respective field(file:///C:/Users/Lingesh%20Raja/git/Ds_AlGO_BDD/src/test/resources/features/registerPage.feature:22)
+</pre></div></td>
+<td>3</td>
+<td>runner.TestRunner@5c90e579</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Field level validation for username and password in registration page", "Registration page validation"</td>
+<td><div><pre>java.lang.AssertionError: Alert message is incorrect expected [Invalid password] but found [password_mismatch:The two password fields didn’t match.]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1590)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+	at org.testng.Assert.assertEquals(Assert.java:132)
+	at org.testng.Assert.assertEquals(Assert.java:656)
+	at stepDefinitions.RegisterPageSteps.user_should_receive_message_for_respective_field(RegisterPageSteps.java:53)
+	at ✽.User should receive &quot;Invalid password&quot; message for respective field(file:///C:/Users/Lingesh%20Raja/git/Ds_AlGO_BDD/src/test/resources/features/registerPage.feature:22)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1196550329", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1196550329'><pre>java.lang.AssertionError: Alert message is incorrect expected [Invalid password] but found [password_mismatch:The two password fields didn’t match.]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1590)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+	at org.testng.Assert.assertEquals(Assert.java:132)
+	at org.testng.Assert.assertEquals(Assert.java:656)
+	at stepDefinitions.RegisterPageSteps.user_should_receive_message_for_respective_field(RegisterPageSteps.java:53)
+	at ✽.User should receive &quot;Invalid password&quot; message for respective field(file:///C:/Users/Lingesh%20Raja/git/Ds_AlGO_BDD/src/test/resources/features/registerPage.feature:22)
+</pre></div></td>
+<td>3</td>
+<td>runner.TestRunner@5c90e579</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user receives hovertext message for all empty fields during registration", "Registration page validation"</td>
+<td><div><pre>java.lang.AssertionError: Hover Text mismatch expected [Please fill out this field.] but found [Please fill in this field.]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1590)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+	at org.testng.Assert.assertEquals(Assert.java:132)
+	at org.testng.Assert.assertEquals(Assert.java:656)
+	at stepDefinitions.RegisterPageSteps.hover_text_message_as_should_be_displayed_for_respective_textbox(RegisterPageSteps.java:47)
+	at ✽.Hover text message as &quot;Please fill out this field.&quot; should be displayed for respective &quot;Password&quot; textbox(file:///C:/Users/Lingesh%20Raja/git/Ds_AlGO_BDD/src/test/resources/features/registerPage.feature:11)
+</pre></div><a href='#' onClick='toggleBox("stack-trace2125346660", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2125346660'><pre>java.lang.AssertionError: Hover Text mismatch expected [Please fill out this field.] but found [Please fill in this field.]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1590)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+	at org.testng.Assert.assertEquals(Assert.java:132)
+	at org.testng.Assert.assertEquals(Assert.java:656)
+	at stepDefinitions.RegisterPageSteps.hover_text_message_as_should_be_displayed_for_respective_textbox(RegisterPageSteps.java:47)
+	at ✽.Hover text message as &quot;Please fill out this field.&quot; should be displayed for respective &quot;Password&quot; textbox(file:///C:/Users/Lingesh%20Raja/git/Ds_AlGO_BDD/src/test/resources/features/registerPage.feature:11)
+</pre></div></td>
+<td>3</td>
+<td>runner.TestRunner@5c90e579</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Field level validation for username and password in registration page", "Registration page validation"</td>
+<td><div><pre>java.lang.AssertionError: Alert message is incorrect expected [Invalid password] but found [password_mismatch:The two password fields didn’t match.]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1590)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+	at org.testng.Assert.assertEquals(Assert.java:132)
+	at org.testng.Assert.assertEquals(Assert.java:656)
+	at stepDefinitions.RegisterPageSteps.user_should_receive_message_for_respective_field(RegisterPageSteps.java:53)
+	at ✽.User should receive &quot;Invalid password&quot; message for respective field(file:///C:/Users/Lingesh%20Raja/git/Ds_AlGO_BDD/src/test/resources/features/registerPage.feature:22)
+</pre></div><a href='#' onClick='toggleBox("stack-trace2077845538", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2077845538'><pre>java.lang.AssertionError: Alert message is incorrect expected [Invalid password] but found [password_mismatch:The two password fields didn’t match.]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1590)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+	at org.testng.Assert.assertEquals(Assert.java:132)
+	at org.testng.Assert.assertEquals(Assert.java:656)
+	at stepDefinitions.RegisterPageSteps.user_should_receive_message_for_respective_field(RegisterPageSteps.java:53)
+	at ✽.User should receive &quot;Invalid password&quot; message for respective field(file:///C:/Users/Lingesh%20Raja/git/Ds_AlGO_BDD/src/test/resources/features/registerPage.feature:22)
+</pre></div></td>
+<td>3</td>
+<td>runner.TestRunner@5c90e579</td></tr>
+</table><p>
+>>>>>>> main
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
@@ -76,6 +294,7 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
+<<<<<<< HEAD
 <td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User navigates to other DataStructure topic pages from Stack page", "Stack Module"</td>
 <td></td>
 <td>4</td>
@@ -105,6 +324,67 @@ function toggleAllBoxes() {
 <td></td>
 <td>3</td>
 <td>runner.TestRunner@57250572</td></tr>
+=======
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user is navigated to Home page and able to see warning message while selecting values from the Data Structure drop down", "Registration page validation"</td>
+<td></td>
+<td>3</td>
+<td>runner.TestRunner@5c90e579</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that page is reloaded on clicking "Register" hyperlink on the top right", "Registration page validation"</td>
+<td></td>
+<td>2</td>
+<td>runner.TestRunner@5c90e579</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user is navigated to Home page and able to see warning message while selecting values from the Data Structure drop down", "Registration page validation"</td>
+<td></td>
+<td>3</td>
+<td>runner.TestRunner@5c90e579</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Field level validation for username and password in registration page", "Registration page validation"</td>
+<td></td>
+<td>3</td>
+<td>runner.TestRunner@5c90e579</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user is navigated to Home page and able to see warning message while selecting values from the Data Structure drop down", "Registration page validation"</td>
+<td></td>
+<td>3</td>
+<td>runner.TestRunner@5c90e579</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user is navigated to Home page and able to see warning message while selecting values from the Data Structure drop down", "Registration page validation"</td>
+<td></td>
+<td>3</td>
+<td>runner.TestRunner@5c90e579</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user is able to navigate to Login page by clicking on the Sign in hyperlink on the top right", "Registration page validation"</td>
+<td></td>
+<td>2</td>
+<td>runner.TestRunner@5c90e579</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user is able to view dropdown options for Data Structures dropdown on Registration page", "Registration page validation"</td>
+<td></td>
+<td>2</td>
+<td>runner.TestRunner@5c90e579</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user is navigated to Home page and able to see warning message while selecting values from the Data Structure drop down", "Registration page validation"</td>
+<td></td>
+<td>3</td>
+<td>runner.TestRunner@5c90e579</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user is able to navigate to Login page by clicking on the Login hyperlink", "Registration page validation"</td>
+<td></td>
+<td>3</td>
+<td>runner.TestRunner@5c90e579</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that Launch page with Get Started button is displayed on clicking NumpyNinja label", "Registration page validation"</td>
+<td></td>
+<td>3</td>
+<td>runner.TestRunner@5c90e579</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user is navigated to Home page and able to see warning message while selecting values from the Data Structure drop down", "Registration page validation"</td>
+<td></td>
+<td>3</td>
+<td>runner.TestRunner@5c90e579</td></tr>
+>>>>>>> main
 </table><p>
 </body>
 </html>

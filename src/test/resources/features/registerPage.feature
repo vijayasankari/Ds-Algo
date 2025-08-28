@@ -5,6 +5,7 @@ Feature: Registration page validation
   Background: 
     Given User navigates to registration page from home page
 
+
   @RegisterPageHoverTextValidation
   Scenario Outline: Verify that user receives hovertext message for all empty fields during registration
     When The user clicks Register button after entering "<username>" and "<password>" and "<passwordConfirmation>"
@@ -54,7 +55,7 @@ Feature: Registration page validation
   Scenario: Verify that user is able to view dropdown options for Data Structures dropdown on Registration page
     When The user clicks the data structure dropdown in Register page
     Then user should see the following options
-      | Option      |
+
       | Arrays      |
       | Linked List |
       | Stack       |
@@ -64,7 +65,7 @@ Feature: Registration page validation
 
   @RegisterPageDropdownValuesSelection
   Scenario Outline: Verify that user is navigated to Home page and able to see warning message while selecting values from the Data Structure drop down
-    When The user selects <dropdown> values
+
     Then The user should be navigated to Home page
     And able to see warning message "You are not logged in"
 

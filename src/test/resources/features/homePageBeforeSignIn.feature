@@ -19,6 +19,7 @@ Feature: User accessibility verification of Home page without Sign in
     When The user clicks Sign in link
     Then The user should be redirected to Sign in page
 
+
   @HomePageDropDownValuesVerification
   Scenario: Verify that user is able to view dropdown options for Data Structures dropdown on home page
     When The user clicks the data Structures dropdown in Home page
@@ -31,7 +32,9 @@ Feature: User accessibility verification of Home page without Sign in
       | Tree        |
       | Graph       |
 
+
   @UnauthenticatedModuleStart @DropDownSelection
+
   Scenario Outline: Verify that user able to see warning message while selecting values from the Data structure drop down
     When The user selects "<value>" from the drop down
     Then The user should able to see warning message as "You are not logged in"

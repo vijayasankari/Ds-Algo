@@ -33,3 +33,4 @@ public class LaunchPage {
 		return driver.getTitle();
 	}
 }
+

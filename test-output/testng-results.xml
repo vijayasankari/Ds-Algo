@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <testng-results ignored="0" total="6" passed="6" failed="0" skipped="0">
   <reporter-output>
@@ -125,3 +126,516 @@
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="21" passed="12" failed="9" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-08-25T22:04:57 EDT" name="Default suite" finished-at="2025-08-25T22:06:05 EDT" duration-ms="67671">
+    <groups>
+      <group name="cucumber">
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@5c90e579]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+      </group> <!-- cucumber -->
+    </groups>
+    <test started-at="2025-08-25T22:04:57 EDT" name="Default test" finished-at="2025-08-25T22:06:05 EDT" duration-ms="67671">
+      <class name="runner.TestRunner">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:runner.TestRunner@5c90e579]" started-at="2025-08-25T22:04:57 EDT" name="setUpClass" finished-at="2025-08-25T22:04:58 EDT" duration-ms="861" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@56c6d515]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@5c90e579]" started-at="2025-08-25T22:04:58 EDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-08-25T22:05:02 EDT" duration-ms="3747" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify that user receives hovertext message for all empty fields during registration"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Registration page validation"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Hover Text mismatch expected [Please fill out this field.] but found [Please fill in this field.]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Hover Text mismatch expected [Please fill out this field.] but found [Please fill in this field.]
+at org.testng.Assert.fail(Assert.java:111)
+at org.testng.Assert.failNotEquals(Assert.java:1590)
+at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+at org.testng.Assert.assertEquals(Assert.java:132)
+at org.testng.Assert.assertEquals(Assert.java:656)
+at stepDefinitions.RegisterPageSteps.hover_text_message_as_should_be_displayed_for_respective_textbox(RegisterPageSteps.java:47)
+at ✽.Hover text message as "Please fill out this field." should be displayed for respective "Username" textbox(file:///C:/Users/Lingesh%20Raja/git/Ds_AlGO_BDD/src/test/resources/features/registerPage.feature:11)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@5c90e579]" started-at="2025-08-25T22:05:02 EDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-08-25T22:05:05 EDT" duration-ms="3132" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify that user receives hovertext message for all empty fields during registration"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Registration page validation"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Hover Text mismatch expected [Please fill out this field.] but found [Please fill in this field.]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Hover Text mismatch expected [Please fill out this field.] but found [Please fill in this field.]
+at org.testng.Assert.fail(Assert.java:111)
+at org.testng.Assert.failNotEquals(Assert.java:1590)
+at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+at org.testng.Assert.assertEquals(Assert.java:132)
+at org.testng.Assert.assertEquals(Assert.java:656)
+at stepDefinitions.RegisterPageSteps.hover_text_message_as_should_be_displayed_for_respective_textbox(RegisterPageSteps.java:47)
+at ✽.Hover text message as "Please fill out this field." should be displayed for respective "Password" textbox(file:///C:/Users/Lingesh%20Raja/git/Ds_AlGO_BDD/src/test/resources/features/registerPage.feature:11)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@5c90e579]" started-at="2025-08-25T22:05:05 EDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-08-25T22:05:08 EDT" duration-ms="2862" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify that user receives hovertext message for all empty fields during registration"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Registration page validation"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Hover Text mismatch expected [Please fill out this field.] but found [Please fill in this field.]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Hover Text mismatch expected [Please fill out this field.] but found [Please fill in this field.]
+at org.testng.Assert.fail(Assert.java:111)
+at org.testng.Assert.failNotEquals(Assert.java:1590)
+at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+at org.testng.Assert.assertEquals(Assert.java:132)
+at org.testng.Assert.assertEquals(Assert.java:656)
+at stepDefinitions.RegisterPageSteps.hover_text_message_as_should_be_displayed_for_respective_textbox(RegisterPageSteps.java:47)
+at ✽.Hover text message as "Please fill out this field." should be displayed for respective "PasswordConfirmation" textbox(file:///C:/Users/Lingesh%20Raja/git/Ds_AlGO_BDD/src/test/resources/features/registerPage.feature:11)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@5c90e579]" started-at="2025-08-25T22:05:08 EDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-08-25T22:05:11 EDT" duration-ms="3199" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Field level validation for username and password in registration page"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Registration page validation"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Alert message is incorrect expected [Invalid Username] but found [password_mismatch:The two password fields didn’t match.]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Alert message is incorrect expected [Invalid Username] but found [password_mismatch:The two password fields didn’t match.]
+at org.testng.Assert.fail(Assert.java:111)
+at org.testng.Assert.failNotEquals(Assert.java:1590)
+at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+at org.testng.Assert.assertEquals(Assert.java:132)
+at org.testng.Assert.assertEquals(Assert.java:656)
+at stepDefinitions.RegisterPageSteps.user_should_receive_message_for_respective_field(RegisterPageSteps.java:53)
+at ✽.User should receive "Invalid Username" message for respective field(file:///C:/Users/Lingesh%20Raja/git/Ds_AlGO_BDD/src/test/resources/features/registerPage.feature:22)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@5c90e579]" started-at="2025-08-25T22:05:11 EDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-08-25T22:05:15 EDT" duration-ms="3453" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Field level validation for username and password in registration page"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Registration page validation"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Alert message is incorrect expected [Invalid Username] but found [password_mismatch:The two password fields didn’t match.]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Alert message is incorrect expected [Invalid Username] but found [password_mismatch:The two password fields didn’t match.]
+at org.testng.Assert.fail(Assert.java:111)
+at org.testng.Assert.failNotEquals(Assert.java:1590)
+at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+at org.testng.Assert.assertEquals(Assert.java:132)
+at org.testng.Assert.assertEquals(Assert.java:656)
+at stepDefinitions.RegisterPageSteps.user_should_receive_message_for_respective_field(RegisterPageSteps.java:53)
+at ✽.User should receive "Invalid Username" message for respective field(file:///C:/Users/Lingesh%20Raja/git/Ds_AlGO_BDD/src/test/resources/features/registerPage.feature:22)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@5c90e579]" started-at="2025-08-25T22:05:15 EDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-08-25T22:05:18 EDT" duration-ms="3304" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Field level validation for username and password in registration page"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Registration page validation"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Alert message is incorrect expected [Invalid password] but found [password_mismatch:The two password fields didn’t match.]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Alert message is incorrect expected [Invalid password] but found [password_mismatch:The two password fields didn’t match.]
+at org.testng.Assert.fail(Assert.java:111)
+at org.testng.Assert.failNotEquals(Assert.java:1590)
+at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+at org.testng.Assert.assertEquals(Assert.java:132)
+at org.testng.Assert.assertEquals(Assert.java:656)
+at stepDefinitions.RegisterPageSteps.user_should_receive_message_for_respective_field(RegisterPageSteps.java:53)
+at ✽.User should receive "Invalid password" message for respective field(file:///C:/Users/Lingesh%20Raja/git/Ds_AlGO_BDD/src/test/resources/features/registerPage.feature:22)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@5c90e579]" started-at="2025-08-25T22:05:18 EDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-08-25T22:05:21 EDT" duration-ms="3298" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Field level validation for username and password in registration page"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Registration page validation"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Alert message is incorrect expected [Invalid password] but found [password_mismatch:The two password fields didn’t match.]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Alert message is incorrect expected [Invalid password] but found [password_mismatch:The two password fields didn’t match.]
+at org.testng.Assert.fail(Assert.java:111)
+at org.testng.Assert.failNotEquals(Assert.java:1590)
+at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+at org.testng.Assert.assertEquals(Assert.java:132)
+at org.testng.Assert.assertEquals(Assert.java:656)
+at stepDefinitions.RegisterPageSteps.user_should_receive_message_for_respective_field(RegisterPageSteps.java:53)
+at ✽.User should receive "Invalid password" message for respective field(file:///C:/Users/Lingesh%20Raja/git/Ds_AlGO_BDD/src/test/resources/features/registerPage.feature:22)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@5c90e579]" started-at="2025-08-25T22:05:21 EDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-08-25T22:05:24 EDT" duration-ms="3194" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Field level validation for username and password in registration page"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Registration page validation"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Alert message is incorrect expected [Invalid password] but found [password_mismatch:The two password fields didn’t match.]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Alert message is incorrect expected [Invalid password] but found [password_mismatch:The two password fields didn’t match.]
+at org.testng.Assert.fail(Assert.java:111)
+at org.testng.Assert.failNotEquals(Assert.java:1590)
+at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+at org.testng.Assert.assertEquals(Assert.java:132)
+at org.testng.Assert.assertEquals(Assert.java:656)
+at stepDefinitions.RegisterPageSteps.user_should_receive_message_for_respective_field(RegisterPageSteps.java:53)
+at ✽.User should receive "Invalid password" message for respective field(file:///C:/Users/Lingesh%20Raja/git/Ds_AlGO_BDD/src/test/resources/features/registerPage.feature:22)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@5c90e579]" started-at="2025-08-25T22:05:24 EDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-08-25T22:05:28 EDT" duration-ms="3208" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Field level validation for username and password in registration page"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Registration page validation"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@5c90e579]" started-at="2025-08-25T22:05:28 EDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-08-25T22:05:31 EDT" duration-ms="3019" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify that user is able to navigate to Login page by clicking on the Login hyperlink"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Registration page validation"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@5c90e579]" started-at="2025-08-25T22:05:31 EDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-08-25T22:05:34 EDT" duration-ms="2919" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify that user is able to navigate to Login page by clicking on the Sign in hyperlink on the top right"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Registration page validation"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@5c90e579]" started-at="2025-08-25T22:05:34 EDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-08-25T22:05:36 EDT" duration-ms="2807" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify that page is reloaded on clicking "Register" hyperlink on the top right"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Registration page validation"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@5c90e579]" started-at="2025-08-25T22:05:36 EDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-08-25T22:05:40 EDT" duration-ms="3071" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify that Launch page with Get Started button is displayed on clicking NumpyNinja label"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Registration page validation"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@5c90e579]" started-at="2025-08-25T22:05:40 EDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-08-25T22:05:43 EDT" duration-ms="2996" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify that user is able to view dropdown options for Data Structures dropdown on Registration page"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Registration page validation"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@5c90e579]" started-at="2025-08-25T22:05:43 EDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-08-25T22:05:46 EDT" duration-ms="3273" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify that user is navigated to Home page and able to see warning message while selecting values from the Data Structure drop down"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Registration page validation"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@5c90e579]" started-at="2025-08-25T22:05:46 EDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-08-25T22:05:49 EDT" duration-ms="3192" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify that user is navigated to Home page and able to see warning message while selecting values from the Data Structure drop down"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Registration page validation"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@5c90e579]" started-at="2025-08-25T22:05:49 EDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-08-25T22:05:52 EDT" duration-ms="3469" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify that user is navigated to Home page and able to see warning message while selecting values from the Data Structure drop down"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Registration page validation"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@5c90e579]" started-at="2025-08-25T22:05:52 EDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-08-25T22:05:56 EDT" duration-ms="3327" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify that user is navigated to Home page and able to see warning message while selecting values from the Data Structure drop down"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Registration page validation"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@5c90e579]" started-at="2025-08-25T22:05:56 EDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-08-25T22:05:59 EDT" duration-ms="3274" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify that user is navigated to Home page and able to see warning message while selecting values from the Data Structure drop down"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Registration page validation"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@5c90e579]" started-at="2025-08-25T22:05:59 EDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-08-25T22:06:02 EDT" duration-ms="3289" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify that user is navigated to Home page and able to see warning message while selecting values from the Data Structure drop down"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Registration page validation"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@5c90e579]" started-at="2025-08-25T22:06:02 EDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-08-25T22:06:05 EDT" duration-ms="2628" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify that user is able to land on Homepage after registration with valid fields"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Registration page validation"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[User is not redirected to Home page expected [NumpyNinja] but found [Registration]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: User is not redirected to Home page expected [NumpyNinja] but found [Registration]
+at org.testng.Assert.fail(Assert.java:111)
+at org.testng.Assert.failNotEquals(Assert.java:1590)
+at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+at org.testng.Assert.assertEquals(Assert.java:132)
+at org.testng.Assert.assertEquals(Assert.java:656)
+at stepDefinitions.RegisterPageSteps.the_user_should_be_redirected_to_home_page_of_ds_algo(RegisterPageSteps.java:132)
+at ✽.The user should be redirected to Home Page of DS Algo(file:///C:/Users/Lingesh%20Raja/git/Ds_AlGO_BDD/src/test/resources/features/registerPage.feature:82)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:runner.TestRunner@5c90e579]" started-at="2025-08-25T22:06:05 EDT" name="tearDownClass" finished-at="2025-08-25T22:06:05 EDT" duration-ms="23" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- runner.TestRunner -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
+>>>>>>> main
