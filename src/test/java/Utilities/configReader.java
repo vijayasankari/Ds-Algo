@@ -6,8 +6,8 @@ import java.util.Properties;
 
 public class configReader {
     private static Properties prop = new Properties();
-
-    //public static String browser; // optional, only needed if you're using it
+    public static String filepath;
+    public static String SheetName;
 
     static {
         try (FileInputStream ip = new FileInputStream("./src/test/resources/Config/config.properties")) {

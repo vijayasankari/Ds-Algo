@@ -4,12 +4,15 @@ Feature: Data Structures Introduction Page validation
 
   Background: 
     Given User logged into DsAlgo portal
+
     And clicks Data Structures-Introduction Get Started button
 
   @TimeComplexityPage
+
   Scenario: Verify that user is able to navigate to Time Complexity page
     When The user clicks Time Complexity hyperlink
     Then The user should be redirected to Time Complexity page of Data structures-Introduction
+
 
   @DataStructuresPracticeQuestions
   Scenario: Verify that user is able to navigate to Practice Questions page
@@ -40,6 +43,7 @@ Feature: Data Structures Introduction Page validation
       | Queue       |
       | Tree        |
       | Graph       |
+
 
   @DataStructuresPageUsernameHyperlink
   Scenario: Verify that page is reloaded on clicking username hyperlink on the top right

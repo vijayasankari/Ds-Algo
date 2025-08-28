@@ -58,6 +58,7 @@ public class homePO {
 	@FindBy(xpath = "//*[@id='navbarCollapse']/div[2]/ul/a[2]")
 	WebElement FetchUsername;
 
+
 	public homePO(WebDriver driver) { // Pass the driver instance to the constructor
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
@@ -67,6 +68,7 @@ public class homePO {
 	public String getTitleCurrentPage() {
 		return driver.getTitle();
 	}
+
 
 	public void clickNumpyNinjaLabel() {
 		if (NumpyNinjaLabel.isDisplayed()) {
@@ -100,12 +102,14 @@ public class homePO {
 		} else {
 			System.out.println(dropdownValues.size());
 			for (WebElement item : dropdownValues) {
+
 				String text = item.getText();
 				dropdownValue.add(text);
 			}
 		}
 		return dropdownValue;
 	}
+
 
 	public void clickArrayInDropdown() {
 		clickDataStructuresDropdown();
@@ -181,12 +185,15 @@ public class homePO {
 	public void clickGraphGetStartedButton() {
 		if (GraphGetStarted.isDisplayed()) {
 			wait.until(ExpectedConditions.elementToBeClickable(GraphGetStarted)).click();
+
 		}
 	}
 
 	public void clickSignOut() {
+
 		if (SignOut.isDisplayed()) {
 			SignOut.click();
 		}
+
 	}
 }
