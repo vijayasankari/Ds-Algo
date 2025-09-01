@@ -2,23 +2,26 @@ Feature: Stack Module
   This is to test the links and tryeditor page in the Stack module of DS-Algo online learning portal
 
   Background: 
-    Given User sign in to dsAlgo Portal
-    And User navigates to Stack page using the Getting Started button
+    Given User sign in to dsAlgo Portal with username and password fetched for Successful login from Excel file
+    When User clicks Get Started button for stack page after reaching home page
 
-  @Stack-PresenceOfStackTopicLinks
-  Scenario Outline: User sees links enabled for Stack topics in Stack page
-    When User looks for StackTopics under Topics Covered section in Stack page
-      | StackTopics         |
-      | Operations in Stack |
-      | Implementation      |
-      | Applications        |
-    Then User sees the following Stack topic listed are in link format
+  @PresenceOfStackTopic @Login
+  Scenario: User should see the topics covered in Stack
+    Then User should see the following StackTopics under Topics Covered section in Stack page
       | StackTopics         |
       | Operations in Stack |
       | Implementation      |
       | Applications        |
 
-  @Stack-StackTopics-Navigation
+  @StackTopicLinks @Login
+  Scenario: User should see that links are enabled for Stack topics
+    Then User should see the following Stack topic listed are in link format
+      | StackTopics         |
+      | Operations in Stack |
+      | Implementation      |
+      | Applications        |
+
+  @StackTopics-Navigation @Login
   Scenario Outline: User navigates to each of the StackTopics in Stack page
     When User clicks "<stackTopic>" button in Stack Page
     Then User is redirected to "<stackTopic>" topic in Stack Page
@@ -30,9 +33,9 @@ Feature: Stack Module
       | Applications        |
 
   @StackTopics-PresenceOfTryHereButton
-  Scenario Outline: User sees Try Here button under StackTopics in Stack page
+  Scenario Outline: User should see Try Here button under StackTopics in Stack page
     When User clicks "<stackTopic>" button in Stack Page
-    Then User sees Try Here button below the content for "<stackTopic>" topic
+    Then User should see Try Here button below the content for "<stackTopic>" topic
 
     Examples: 
       | stackTopic          |
@@ -42,8 +45,7 @@ Feature: Stack Module
 
   @StackTopics-TryEditor
   Scenario Outline: User goes to the try Editor page of StackTopics
-    When User clicks "<stackTopic>" button in Stack Page
-    And clicks Try Here button under "<stackTopic>" topic content
+    When User clicks Try Here button under "<stack Topic>"
     Then User is redirected to TryEditor page with a Run button to test
 
     Examples: 
@@ -52,34 +54,35 @@ Feature: Stack Module
       | Implementation      |
       | Applications        |
 
-  @StackTopics-TryEditor-InvalidCodeValidation
-  Scenario Outline: Code validation in the tryEditor page of  Implementation
-    When User clicks "<stackTopic>" button in Stack Page
-    And clicks Try Here button under "<stackTopic>" topic content
-    And enters invalid code read from excel in the try editor page and clicks on Run button
+  @StackTopics-TryEditor-InvalidCodeValidation @Login
+  Scenario Outline: Code validation in the tryEditor page of stackTopic
+    When User enters invalid code "<CodePattern>" read from excel in the text editor after reaching tryEditor page of "<stackTopic>"
     Then error message alert is thrown
 
     Examples: 
-      | stackTopic          |
-      | Operations in Stack |
-      | Implementation      |
-      | Applications        |
+      | CodePattern  | stackTopic          |
+      | invalidCode1 | Operations in Stack |
+      | invalidCode1 | Implementation      |
+      | invalidCode1 | Applications        |
+      | invalidCode2 | Operations in Stack |
+      | invalidCode2 | Implementation      |
+      | invalidCode2 | Applications        |
 
-  @StackTopics-TryEditor-ValidCodeValidation
-  Scenario Outline: Code validation in the tryEditor page of  Implementation
-    When User clicks "<stackTopic>" button in Stack Page
-    And clicks Try Here button under "<stackTopic>" topic content
-    And enters valid code read from excel in the try editor page and clicks on Run button
+  @StackTopics-TryEditor-ValidCodeValidation @Login
+  Scenario Outline: Code validation in the tryEditor page of stackTopic
+    When User enters valid code "<CodePattern>" read from excel in the text editor after reaching tryEditor page of "<stackTopic>"
     Then Output is displayed for "<stackTopic>" valid code
 
     Examples: 
-      | stackTopic          |
-      | Operations in Stack |
-      | Implementation      |
-      | Applications        |
+      | CodePattern | stackTopic          |
+      | validCode1  | Operations in Stack |
+      | validCode1  | Implementation      |
+      | validCode1  | Applications        |
+      | validCode2  | Operations in Stack |
+      | validCode2  | Implementation      |
+      | validCode2  | Applications        |
 
- 
-  @Stack-OtherTopicsNavigation
+  @Stack-OtherTopicsNavigation @Login
   Scenario Outline: User navigates to other DataStructure topic pages from Stack page
     When User clicks Data Structures dropdown button and selects "<otherTopics>" item
     Then User is redirected to "<otherTopics>" page
@@ -93,13 +96,12 @@ Feature: Stack Module
       | Tree        |
       | Graph       |
 
-  @Stack-HomePageNavigation
+  @Stack-HomePageNavigation @Login
   Scenario: User navigates to home page from stack page
     When User clicks Numpy Ninja button from stack page
     Then User is redirected to home page
 
-  @Stack-Logout
+  @Stack-Logout @Login
   Scenario: User logs out from Stack Page
     When User clicks Signout button from Stack page
-    Then User should be navigated to home page
-    And User should see the message "Logged out successfully"
+    Then User should be navigated to home page with message seen as "Logged out successfully"

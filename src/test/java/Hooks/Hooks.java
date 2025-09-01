@@ -6,15 +6,26 @@ import org.openqa.selenium.WebDriver;
 
 import DriverFactory.driverFactory;
 import Utilities.configReader;
+import Utilities.excelReader;
 import io.cucumber.java.After;
 import io.cucumber.java.AfterStep;
 import io.cucumber.java.Before;
+import io.cucumber.java.BeforeAll;
 import io.cucumber.java.Scenario;
 import io.qameta.allure.Allure;
 
 public class Hooks {
 
 	public static WebDriver driver;
+	
+	@BeforeAll
+	public static void getData() {
+		try {
+			excelReader.fetchData = excelReader.loadTestDataFile(configReader.getProperty("excelPath"),"TryCatchers");
+		} catch (Exception e) {		
+			e.printStackTrace();
+		}
+	}
 
 	@Before(order = 0)
 	public void setUp() {

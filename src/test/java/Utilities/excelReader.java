@@ -12,10 +12,10 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class excelReader {
-	static int rowCount;
-	static int colCount;
-
-	public static List<Map<String, String>> getTestData(String filePath, String sheetName) throws Exception {
+	
+	public static List<Map<String, String>>  fetchData;
+	
+	public static List<Map<String, String>> loadTestDataFile(String filePath, String sheetName) throws Exception {
 
 		FileInputStream file = new FileInputStream(System.getProperty("user.dir") + filePath);
 
@@ -23,12 +23,10 @@ public class excelReader {
 
 		XSSFSheet sheet = workbook.getSheet(sheetName);
 
-
 		if (sheet == null) {
 			workbook.close();
 			file.close();
 			throw new IllegalArgumentException("Sheet '" + sheetName + "' not found in the workbook.");
-
 		}
 
 		// Get the header row (row 0) to use as keys for the maps
@@ -69,26 +67,14 @@ public class excelReader {
 		return data;
 	}
 	
-	public static String getTryEditorCode(String codeType) {
-		String filepath = configReader.getProperty("filepath");
-	    String SheetName="TryEditor";
-	    String code=null;
-		try {
-			Object[][] fetchedData = excelReader.getTestData(filepath, SheetName);
-			int i=0;
-				
-				for(int j=0;j<colCount;j++) {
-					String value=(String) fetchedData[i][j];
-					//System.out.println("value is"+value);
-					if (value.equalsIgnoreCase(codeType)) {
-						code=(String) fetchedData[i+1][j];
-						
-					}
-					i=0;
-				}
-		} catch (Exception e) {
-			e.printStackTrace();
+	public static List<Map<String, String>> getTestData (String scenarioName) throws Exception {
+	List<Map<String, String>> testData = new ArrayList<>();
+		for (Map<String, String> rowData : fetchData) {
+			if (scenarioName.equalsIgnoreCase(rowData.get("ScenarioName"))) {
+				System.out.println("excelreadergetTestData: "+rowData.get("ScenarioName"));
+				testData.add(rowData);
+			}
 		}
-		return code;
+		return testData;
 	}
 }
