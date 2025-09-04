@@ -5,12 +5,8 @@
   <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
   
-  
-  
-  
-  
+ 
   <dependencies>
-  
   
   <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
 <dependency>
@@ -76,5 +72,41 @@
     <version>3.5.3</version>
 </dependency>
   </dependencies>
+  <build>
+  <plugins>
+  <plugin>
+  <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-surefire-plugin -->
+
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-surefire-plugin</artifactId>
+    <version>3.5.3</version>
+	
+	<configuration>
+	
+	<suiteXmlFiles>
+	<suiteXMLFile>Testng.xml</suiteXMLFile>
+	</suiteXmlFiles>
+	
+	<systemPropertyVariables>
+	<browser>chrome</browser>
+	</systemPropertyVariables>
+	
+	<systemPropertyVariables>
+	<browser>${browser}</browser>
+	</systemPropertyVariables>
+	
+	</configuration>
+  </plugin>
+  </plugins></build>
+  
+ <profiles>
+  <profile><id>chrome</id>
+  <properties><browser>chrome</browser></properties></profile>
+  <profile><id>edge</id>
+  <properties><browser>edge</browser></properties></profile>
+  <profile><id>firefox</id>
+  <properties><browser>firefox</browser></properties></profile>
+  </profiles>
+  
   
 </project>

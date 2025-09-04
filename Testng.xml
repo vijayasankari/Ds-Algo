@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="MyTestNGSuite">
+  <test name="CrossBrowserTest">
+  <parameter name="Browser" value="${browser}"></parameter>
+    <classes>
+      <class name="runner.TestRunner"> </class>
+      
+    </classes>
+  </test>
+</suite>

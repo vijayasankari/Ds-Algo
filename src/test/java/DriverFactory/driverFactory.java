@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import Utilities.configReader;
@@ -20,13 +21,17 @@ public class driverFactory {
 	public static WebDriver getDriver() {
 		try {
 			url = configReader.getProperty("url");
-			browser = configReader.getProperty("browser");
+			System.out.println("DF: "+url);
+			browser = configReader.getBrowserType();
+			System.out.println("Driverfact"+browser);
 			if (browser.equalsIgnoreCase("chrome")) {
 				ChromeOptions chromeOptions = new ChromeOptions();
 				chromeOptions.setPageLoadStrategy(PageLoadStrategy.NORMAL);
 				driver = new ChromeDriver(chromeOptions); // Initialize the driver (e.g., for Chrome)
 			} else if (browser.equalsIgnoreCase("edge")) {
-				driver = new EdgeDriver();
+				System.out.println("DFEdge: "+browser);
+				EdgeOptions edgeOptions=new EdgeOptions();
+				driver = new EdgeDriver(edgeOptions);
 			} else if (browser.equalsIgnoreCase("firefox")) {
 				driver = new FirefoxDriver();
 			} else {
