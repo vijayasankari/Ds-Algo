@@ -24,12 +24,12 @@ public class ElementUtils {
 		this.wait=new WebDriverWait(driver,Duration.ofSeconds(10));
 	}
 
-	@FindBy (xpath="//p[@class='bg-secondary text-white']") private WebElement topicsCoveredHeader;
-	@FindBy(xpath="//a[@class='list-group-item']")private List<WebElement> listOfTopicsCovered;
-	@FindBy(linkText="Try here>>>")private WebElement tryEditor;
 	
 	
-	public boolean TopicsCoveredHeader() {
+	
+	
+	
+	public boolean TopicsCoveredHeader(WebElement topicsCoveredHeader ) {
 		
 		String text=topicsCoveredHeader.getText();
 		
@@ -38,6 +38,7 @@ public class ElementUtils {
 					//log:"Topics Covered" is present in the webpage
 					System.out.println("Topics Covered header is present in the webpage");
 					return true;
+					
 					}
 			else {
 				//log:"Topics Covered" header is missing
@@ -47,7 +48,7 @@ public class ElementUtils {
 		
 	}
 	
-	public boolean TopicsCovered(String module, String topic, boolean linkformatTest) {
+	public boolean TopicsCovered(String module, String topic, List<WebElement> listOfTopicsCovered,  boolean linkformatTest) {
 		
 		int j=0;
 		int i=0;
@@ -86,7 +87,7 @@ public class ElementUtils {
 	}
 	
 	
-	public void ModuleTopicLinks(String topic) {
+	public void ModuleTopicLinks(String topic, List<WebElement> listOfTopicsCovered) {
 		
 		int j=0;
 		int i=0;
@@ -106,24 +107,26 @@ public class ElementUtils {
 	
 	
 	
-	public String tryEditorcode(String scenarioName,String codeType, String topic) throws Exception{
+	public String tryEditorcode(String scenarioName,String codeType, String topic, List<WebElement> listOfTopicsCovered, WebElement tryEditor) throws Exception{
+		
 		String code=null;
-		ModuleTopicLinks(topic);
+		ModuleTopicLinks(topic,listOfTopicsCovered);
 		tryEditor.click();
 		List<Map<String, String>> scenarioTestData=excelReader.getTestData (scenarioName);
 		
 		for (Map<String, String> scenarioRowData:scenarioTestData) {
-			System.out.println(scenarioRowData.get("CodeType"));
-			if (codeType.equals(scenarioRowData.get("CodeType"))) {
-				 code = scenarioRowData.get("Code");
-				
-				System.out.println(code);
-				
 			
-
+			System.out.println(scenarioRowData.get("CodeType"));
+				if (codeType.equals(scenarioRowData.get("CodeType"))) {
+				 
+						code = scenarioRowData.get("Code");
+						System.out.println(code);
+				
+					}
 		}
-	}
+		
 		return code;	
 	}
+	
 }
 	
