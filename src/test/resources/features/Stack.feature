@@ -32,10 +32,10 @@ Feature: Stack Module
       | Implementation      |
       | Applications        |
 
-  @StackTopics-PresenceOfTryHereButton
+  @StackTopics-PresenceOfTryHereButton @Login
   Scenario Outline: User should see Try Here button under StackTopics in Stack page
     When User clicks "<stackTopic>" button in Stack Page
-    Then User should see Try Here button below the content for "<stackTopic>" topic
+    Then User should see Try Here button below the content for Stack module - "<stackTopic>" topic 
 
     Examples: 
       | stackTopic          |
@@ -43,10 +43,10 @@ Feature: Stack Module
       | Implementation      |
       | Applications        |
 
-  @StackTopics-TryEditor
+  @StackTopics-TryEditor @Login
   Scenario Outline: User goes to the try Editor page of StackTopics
-    When User clicks Try Here button under "<stack Topic>"
-    Then User is redirected to TryEditor page with a Run button to test
+    When User clicks Try Here button under Stack module - "<stack Topic>" topic 
+    Then User is redirected to TryEditor page with a Run button to test code based on Stack
 
     Examples: 
       | stackTopic          |
@@ -56,8 +56,8 @@ Feature: Stack Module
 
   @StackTopics-TryEditor-InvalidCodeValidation @Login
   Scenario Outline: Code validation in the tryEditor page of stackTopic
-    When User enters invalid code "<CodePattern>" read from excel in the text editor after reaching tryEditor page of "<stackTopic>"
-    Then error message alert is thrown
+    When User enters invalid code "<CodePattern>" read from excel in the text editor after reaching tryEditor page of Stack module - "<stackTopic>" topic
+    Then error message alert is thrown for Stack invalid code
 
     Examples: 
       | CodePattern  | stackTopic          |
@@ -70,8 +70,8 @@ Feature: Stack Module
 
   @StackTopics-TryEditor-ValidCodeValidation @Login
   Scenario Outline: Code validation in the tryEditor page of stackTopic
-    When User enters valid code "<CodePattern>" read from excel in the text editor after reaching tryEditor page of "<stackTopic>"
-    Then Output is displayed for "<stackTopic>" valid code
+    When User enters valid code "<CodePattern>" read from excel in the text editor after reaching tryEditor page of Stack module - "<stackTopic>" topic
+    Then Output is displayed for Stack module - "<stackTopic>" topic valid code
 
     Examples: 
       | CodePattern | stackTopic          |
@@ -84,8 +84,8 @@ Feature: Stack Module
 
   @Stack-OtherTopicsNavigation @Login
   Scenario Outline: User navigates to other DataStructure topic pages from Stack page
-    When User clicks Data Structures dropdown button and selects "<otherTopics>" item
-    Then User is redirected to "<otherTopics>" page
+    When User clicks Data Structures dropdown button in stack page and selects "<otherTopics>" item
+    Then User is redirected to "<otherTopics>" page from stack page
 
     Examples: 
       | otherTopics |
@@ -99,9 +99,9 @@ Feature: Stack Module
   @Stack-HomePageNavigation @Login
   Scenario: User navigates to home page from stack page
     When User clicks Numpy Ninja button from stack page
-    Then User is redirected to home page
+    Then User is redirected to home page from stack page
 
   @Stack-Logout @Login
   Scenario: User logs out from Stack Page
     When User clicks Signout button from Stack page
-    Then User should be navigated to home page with message seen as "Logged out successfully"
+    Then User should be navigated from stack page to home page with message seen as "Logged out successfully"

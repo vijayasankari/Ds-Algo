@@ -17,27 +17,18 @@ import io.cucumber.java.en.When;
 public class StackStepDef {
 	
 	private PageObjectManager pageObjectManager;
-	private StackPageObject stack;
-	//private StackPageObject stack;
-	
-	//String invalidCode=excelReader.getTryEditorCode("InvalidCode");
-	//String validCode=excelReader.getTryEditorCode("validCode");
-
-
 		
 	@Before(order = 1) // This @Before runs before each scenario, after Hooks.setUp()
 	public void setUpPageObjects() {
 		
 		pageObjectManager = new PageObjectManager(Hooks.driver);
-		//stack=new StackPageObject(Hooks.driver);
+		
 	}
 		
 	@Given("User sign in to dsAlgo Portal with username and password fetched for Successful login from Excel file")
 	public void User_sign_in_to_dsAlgo_Portal_with_username_and_password_fetched_for_Successful_login_from_Excel_file() {
 	 
-		pageObjectManager.getLaunchPage().GetStartedClick();
-		pageObjectManager.getHomePage().clickSignInLink();
-		pageObjectManager.getLoginPage().fetchLoginCredentialsAndLogin(configReader.filepath, configReader.SheetName);
+		System.out.println("User signed in to DSAlgo portal");
 	
 	}
 
@@ -90,7 +81,7 @@ public class StackStepDef {
 	}
 
 	
-	@Then("User should see Try Here button below the content for {string} topic")
+	@Then("User should see Try Here button below the content for Stack module - {string} topic")
 	public void user_should_see_try_here_button_below_the_content_for_topic(String stackTopic) {
 
 		Assert.assertEquals(pageObjectManager.getStackPage().tryHereDisplayed(),true,"Try Here button is not visible");
@@ -98,52 +89,52 @@ public class StackStepDef {
 	}
 
 	
-	@When("User clicks Try Here button under {string}")
-	public void user_clicks_try_here_button_under(String stackTopic) {
+	@When("User clicks Try Here button under Stack module - {string} topic")
+	public void user_clicks_try_here_button_under_Stack_module(String stackTopic) {
 		
 		pageObjectManager.getStackPage().tryEditor();
 		
 	}
 
-	@Then("User is redirected to TryEditor page with a Run button to test")
-	public void user_is_redirected_to_try_editor_page_of_operations_in_stack_with_a_run_button_to_test() {
+	@Then("User is redirected to TryEditor page with a Run button to test code based on Stack")
+	public void user_is_redirected_to_try_editor_page_of_operations_in_stack_with_a_run_button_to_test_code_based_on_Stack() {
 		
 		Assert.assertEquals(pageObjectManager.getStackPage().getTitleCurrentPage(), "Assessment", "User is not redirected to TryEditor page of Operations in Stack");
 		Assert.assertEquals(pageObjectManager.getStackPage().runBtnDisplayed(),true,"Run button is not displayed in TryEditor page of Operations in Stack topic");
 	
 	}
 	
-	@When("User enters invalid code {string} read from excel in the text editor after reaching tryEditor page of {string}")
+	@When("User enters invalid code {string} read from excel in the text editor after reaching tryEditor page of Stack module - {string} topic")
 	public void user_enters_invalid_Acode_read_from_excel_in_the_text_editor_after_reaching_try_editor_page_of(String invalidCodePattern,String stackTopic) throws Exception {
 		pageObjectManager.getStackPage().tryEditorcode("StackTopics-TryEditor-InvalidCodeValidation",invalidCodePattern,stackTopic);
 		
 	}
 
-	@Then("error message alert is thrown")
-	public void error_message_alert_is_thrown() throws InterruptedException {
+	@Then("error message alert is thrown for Stack invalid code")
+	public void error_message_alert_is_thrown_for_Stack_invalid_code() throws InterruptedException {
 		
 		Assert.assertEquals(pageObjectManager.getStackPage().tryEditorInvalidcodeError(), true, "Alert exception ocurred");
 				}
 
-	@When("User enters valid code {string} read from excel in the text editor after reaching tryEditor page of {string}")
+	@When("User enters valid code {string} read from excel in the text editor after reaching tryEditor page of Stack module - {string} topic")
 	public void user_enters_valid_code_read_from_excel_in_the_text_editor_after_reaching_try_editor_page_of(String validCodePattern,String stackTopic) throws Exception {
 		pageObjectManager.getStackPage().tryEditorcode("StackTopics-TryEditor-ValidCodeValidation",validCodePattern,stackTopic);
 	}
 
-	@Then("Output is displayed for {string} valid code")
+	@Then("Output is displayed for Stack module - {string} topic valid code")
 	public void Output_is_displayed_for(String stackTopic) throws IOException, AWTException, Exception {
 		pageObjectManager.getStackPage().tryEditorValidcodeoutput(stackTopic+"Validcode");
 	}
 
 
 
-	@When("User clicks Data Structures dropdown button and selects {string} item")
+	@When("User clicks Data Structures dropdown button in stack page and selects {string} item")
 	public void user_clicks_data_structures_dropdown_button_and_selects__item(String otherTopic) throws InterruptedException {
 		pageObjectManager.getHomePage().clickDataStructuresDropdown();
 		pageObjectManager.getHomePage().selectDropdownValue(otherTopic);
 	}
 
-	@Then("User is redirected to {string} page")
+	@Then("User is redirected to {string} page from stack page")
 	public void user_is_redirected_to__page(String otherTopic) {
 		String pageTitle=null;
 		switch (otherTopic) {
@@ -164,7 +155,7 @@ public class StackStepDef {
 		pageObjectManager.getHomePage().clickNumpyNinjaLabel();
 	}
 
-	@Then("User is redirected to home page")
+	@Then("User is redirected to home page from stack page")
 	public void user_is_redirected_to_home_page() {
 		Assert.assertEquals(pageObjectManager.getStackPage().getTitleCurrentPage(), "Numpy Ninja", "User is not redirected to home page");
 	}
@@ -174,10 +165,10 @@ public class StackStepDef {
 		pageObjectManager.getHomePage().clickSignOut();
 	}
 	
-	@Then("User should be navigated to home page with message seen as {string}")
+	@Then("User should be navigated from stack page to home page with message seen as {string}")
 	public void user_should_be_navigated_to_home_page_with_message_seen_as(String expectedLogoutMessage) {
 		
-		Assert.assertEquals(stack.getTitleCurrentPage(), "NumpyNinja", "User is not redirected to home page after clicking Logout");
+		Assert.assertEquals(pageObjectManager.getStackPage().getTitleCurrentPage(), "NumpyNinja", "User is not redirected to home page after clicking Logout");
 		Assert.assertEquals(pageObjectManager.getHomePage().messageToUser(), expectedLogoutMessage, "User logged out message is missing");
 	
 	}

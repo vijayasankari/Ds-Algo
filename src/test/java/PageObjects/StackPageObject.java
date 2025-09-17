@@ -5,7 +5,6 @@ import java.awt.AWTException;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
-import java.util.Map;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebDriver;
@@ -19,9 +18,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 
 import Hooks.Hooks;
-
 import Utilities.Screenshot;
-import Utilities.excelReader;
+
 
 
 
@@ -43,13 +41,8 @@ public class StackPageObject {
 	}
 	
 	
-	@FindBy(xpath="//a[@href='stack']")private WebElement stackGetstartedBtn;
-	@FindBy (xpath="//div[@class='navbar-nav']")private WebElement dropdownBtn;
-	@FindBy(xpath="//div/a[@class='dropdown-item']")private List<WebElement> dropdownItems;
-	
 	@FindBy (xpath="//p[@class='bg-secondary text-white']") private WebElement topicsCoveredHeader;
-	//@FindBy(xpath="//a[@class='list-group-item']")private List<WebElement> stackTopicsList;
-	
+	@FindBy(xpath="//a[@class='list-group-item']")private List<WebElement> listOfTopicsCovered;
 	@FindBy(linkText="Try here>>>")private WebElement tryEditor;
 	@FindBy(xpath="//textarea[@tabindex='0']")private WebElement tryEditorBox;
 	@FindBy(xpath="//button[@type='button']")private WebElement runButton;
@@ -64,28 +57,28 @@ public class StackPageObject {
 	
 	public boolean StackTopicCoveredHeader() {
 		
-		boolean presenceOfTopicCoveredHdr=pageObjectManager.getElementUtilsPage().TopicsCoveredHeader();
-		return presenceOfTopicCoveredHdr;
+		return pageObjectManager.getElementUtilsPage().TopicsCoveredHeader(topicsCoveredHeader);
+		
 		
 	}
 	
 	public boolean StackTopicList(String stacktopic) {
 		
-		boolean presenceOfTopics=pageObjectManager.getElementUtilsPage().TopicsCovered("Stack",stacktopic,false);
+		boolean presenceOfTopics=pageObjectManager.getElementUtilsPage().TopicsCovered("Stack",stacktopic,listOfTopicsCovered,false);
 		return 	presenceOfTopics;
 		
 	}
 	
 	public boolean stackTopicLinksFormat(String stackTopic) {
 		
-		return pageObjectManager.getElementUtilsPage().TopicsCovered("Stack",stackTopic, true);
+		return pageObjectManager.getElementUtilsPage().TopicsCovered("Stack",stackTopic,listOfTopicsCovered,true);
 		
 	}
 	
 	
 	public void StackTopicLinksClickAction(String stackTopic) {
 		
-		pageObjectManager.getElementUtilsPage().ModuleTopicLinks(stackTopic);
+		pageObjectManager.getElementUtilsPage().ModuleTopicLinks(stackTopic,listOfTopicsCovered);
 			
 	}
 		
@@ -105,7 +98,7 @@ public class StackPageObject {
 	}
 	
 	public void tryEditorcode(String scenarioName,String codeType, String topic) throws Exception{
-		String code=pageObjectManager.getElementUtilsPage().tryEditorcode(scenarioName, codeType, topic);
+		String code=pageObjectManager.getElementUtilsPage().tryEditorcode(scenarioName, codeType, topic,listOfTopicsCovered, tryEditor);
 		if(code!=null) {
 		Actions actions=new Actions(driver);
 		actions.moveToElement(tryEditorBox).sendKeys(code).perform();
