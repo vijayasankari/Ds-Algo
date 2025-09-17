@@ -74,8 +74,8 @@ Feature: Login page validation
       | Tree            |
       | Graph           |
 
-  @SuccessfulLogin @Login
+  @SuccessfulLogin
   Scenario: Verify that user able to land on Home page after entering valid Username and Password fields
-    When user clicks login button after entering username and password read from excel
+    When user clicks login button after entering username and password read from excel with scenario "SuccessfulLogin"
     Then user should be navigated to dsAlgo Home Page
     And message should be displayed "You are logged in"

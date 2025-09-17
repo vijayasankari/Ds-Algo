@@ -1,10 +1,8 @@
 package PageObjects;
 
 import java.time.Duration;
-import java.util.ArrayList;
 import java.util.List;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -12,10 +10,13 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import Utilities.ElementUtils;
+
 public class homePO {
 
 	private WebDriver driver;
 	private WebDriverWait wait;
+	private ElementUtils elementUtils;
 
 	@FindBy(xpath = "//a[text()='NumpyNinja']")
 	private WebElement NumpyNinjaLabel;
@@ -23,12 +24,12 @@ public class homePO {
 	private WebElement DataStructuresDropdown;
 	@FindBy(xpath = "//*[@class='dropdown-item']")
 	private List<WebElement> DataStructuresDropdownValues;
+	@FindBy(xpath = "//*[@class = 'col']")
+	private List<WebElement> ModuleCards;
 	@FindBy(linkText = "Register")
 	private WebElement Register;
 	@FindBy(linkText = "Sign in")
 	private WebElement SignIn;
-	@FindBy(xpath = "//*[@class='card-body d-flex flex-column']")
-	private List<WebElement> Modules;
 	@FindBy(xpath = "//*[@role='alert']")
 	private WebElement WarningMessage;
 	@FindBy(linkText = "Sign out")
@@ -40,6 +41,7 @@ public class homePO {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 		this.wait = new WebDriverWait(driver, Duration.ofSeconds(30)); // Initialize WebDriverWait with a timeout
+		elementUtils = new ElementUtils(driver);
 	}
 
 	public String getTitleCurrentPage() {
@@ -66,48 +68,24 @@ public class homePO {
 		wait.until(ExpectedConditions.elementToBeClickable(DataStructuresDropdown)).click();
 	}
 
-	public List<String> fetchDataStructuresDropdownValues() {
-		List<String> dropdownValue = new ArrayList<>();
-		if (DataStructuresDropdownValues.isEmpty()) {
-			System.out.println("List is empty");
-		} else {
-			System.out.println(DataStructuresDropdownValues.size());
-			for (WebElement item : DataStructuresDropdownValues) {
-				String text = item.getText();
-				dropdownValue.add(text);
-			}
-		}
-		return dropdownValue;
+	public int numberOfModulesCards() {
+		return elementUtils.countOfModules(ModuleCards);
 	}
 
-	public void selectDropdownValue(String dropdownValue){
-		if (DataStructuresDropdownValues.isEmpty()) {
-			System.out.println("List is empty");
-		} else {
-			for (WebElement item : DataStructuresDropdownValues) {
-				if (dropdownValue.equalsIgnoreCase(item.getText())) {
-					System.out.println(item.getText());
-					wait.until(ExpectedConditions.elementToBeClickable(item)).click();
-					return;
-				}
-			}
-		}
+	public int countOfModulesInDropdown() {
+		return elementUtils.countOfModules(DataStructuresDropdownValues);
+	}
+
+	public List<String> fetchDataStructuresDropdownValues() {
+		return elementUtils.fetchValuesAsString(DataStructuresDropdownValues);
+	}
+
+	public void selectDropdownValue(String dropdownValue) {
+		elementUtils.selectByText(dropdownValue, DataStructuresDropdownValues);
 	}
 
 	public void clickGetStarted(String moduleName) {
-		if (Modules.isEmpty()) {
-			System.out.println("List is empty");
-		} else {
-			for (WebElement item : Modules) {
-				WebElement ModuleTitle = item.findElement(By.xpath(".//*[@class='card-title']"));
-				if (moduleName.equals(ModuleTitle.getText())) {
-					System.out.println("Module name is: " + ModuleTitle.getText());
-					WebElement ModulesGetStartedButton = item.findElement(By.xpath(".//a"));
-					wait.until(ExpectedConditions.elementToBeClickable(ModulesGetStartedButton)).click();
-					return;
-				}
-			}
-		}
+		elementUtils.clickModuleGetStartedButton(moduleName, ModuleCards);
 	}
 
 	public void clickSignOut() {

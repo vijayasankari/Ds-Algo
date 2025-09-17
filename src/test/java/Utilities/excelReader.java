@@ -13,7 +13,9 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class excelReader {
 
-	public static List<Map<String, String>> getTestData(String filePath, String sheetName) throws Exception {
+public static List<Map<String, String>>  fetchData;
+	
+	public static List<Map<String, String>> loadTestDataFile(String filePath, String sheetName) throws Exception {
 
 		FileInputStream file = new FileInputStream(System.getProperty("user.dir") + filePath);
 
@@ -63,5 +65,15 @@ public class excelReader {
 		workbook.close();
 
 		return data;
+	}
+	
+	public static List<Map<String, String>> getTestData (String scenarioName) throws Exception {
+		List<Map<String, String>> testData = new ArrayList<>();
+		for (Map<String, String> rowData : fetchData) {
+			if (scenarioName.equalsIgnoreCase(rowData.get("ScenarioName"))) {
+				testData.add(rowData);
+			}
+		}
+		return testData;
 	}
 }

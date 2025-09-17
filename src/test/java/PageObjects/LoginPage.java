@@ -1,10 +1,8 @@
 package PageObjects;
 
 import java.time.Duration;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -13,12 +11,14 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import Utilities.ElementUtils;
 import Utilities.excelReader;
 
 public class LoginPage {
 
 	private WebDriver driver;
 	private WebDriverWait wait;
+	private ElementUtils elementUtils;
 	private String username;
 	private String password;
 
@@ -47,12 +47,13 @@ public class LoginPage {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 		this.wait = new WebDriverWait(driver, Duration.ofSeconds(30)); // Initialize WebDriverWait with a timeout
+		elementUtils = new ElementUtils(driver);
 	}
 
 	public String getTitleCurrentPage() {
 		return driver.getTitle();
 	}
-	
+
 	public String errorMessage() {
 		return ErrorMessage.getText();
 	}
@@ -60,31 +61,33 @@ public class LoginPage {
 	public String hoverText(String field) {
 		String tooltipText = null;
 		if (field.equalsIgnoreCase("username")) {
-			tooltipText = Username.getAttribute("validationMessage");
+			tooltipText = elementUtils.hoverText(Username);
 		}
 		if (field.equalsIgnoreCase("password")) {
-			tooltipText = Password.getAttribute("validationMessage");
+			tooltipText = elementUtils.hoverText(Password);
 		}
 		return tooltipText;
 	}
 
 	public void clickLoginButton() {
-			LoginButton.click();
+		LoginButton.click();
 	}
 
-	public void fetchLoginCredentialsAndLogin(String filepath, String sheetName) {
+	public void fetchLoginCredentialsAndLogin(String scenarioName) {
+		List<Map<String, String>> loginDataList = null;
 		try {
-			List<Map<String, String>> fetchedData = excelReader.getTestData(filepath, sheetName);
-			for (Map<String, String> rowData : fetchedData) {
-				if ("SuccessfulLogin".equals(rowData.get("ScenarioName"))) {
-					username = rowData.get("Username");
-					password = rowData.get("Password");
-					loginAuthentication(username, password);
-					return;
-				}
-			}
+			loginDataList = excelReader.getTestData(scenarioName);
 		} catch (Exception e) {
 			e.printStackTrace();
+		}
+		if (loginDataList != null) {
+			for (Map<String, String> loginData : loginDataList) {
+				username = loginData.get("Username");
+				password = loginData.get("Password");
+				loginAuthentication(username, password);
+			}
+		} else {
+			System.out.println("loginDataList is null");
 		}
 	}
 
@@ -95,50 +98,31 @@ public class LoginPage {
 	}
 
 	public void clickRegisterHyperLink() {
-			RegisterHyperLink.click();
+		RegisterHyperLink.click();
 	}
 
 	public void clickSignInHyperLink() {
-			SignInHyperLink.click();
+		SignInHyperLink.click();
 	}
 
 	public void clickRegisterHyperLinkAtEndOfPage() {
-			RegisterHyperlinkAtEndOfPage.click();
+		RegisterHyperlinkAtEndOfPage.click();
 	}
 
 	public void clickNumpyNinjaLabel() {
-			wait.until(ExpectedConditions.elementToBeClickable(NumpyNinjaLabel)).click();
+		wait.until(ExpectedConditions.elementToBeClickable(NumpyNinjaLabel)).click();
 	}
 
 	public void clickDataStructuresDropdown() {
-			wait.until(ExpectedConditions.elementToBeClickable(DataStructuresDropdown)).click();
+		wait.until(ExpectedConditions.elementToBeClickable(DataStructuresDropdown)).click();
 	}
 
 	public List<String> fetchDataStructuresDropdownValues() {
-		List<String> dropdownValue = new ArrayList<>();
-		if (DataStructuresDropdownValues.isEmpty()) {
-			System.out.println("List is empty");
-		} else {
-			System.out.println(DataStructuresDropdownValues.size());
-			for (WebElement item : DataStructuresDropdownValues) {
-				String text = item.getText();
-				dropdownValue.add(text);
-			}
-		}
-		return dropdownValue;
+		return elementUtils.fetchValuesAsString(DataStructuresDropdownValues);
 	}
 
 	public void selectDropdownValue(String dropdownValue) {
-		if (DataStructuresDropdownValues.isEmpty()) {
-			System.out.println("List is empty");
-		} else {
-			for (WebElement item : DataStructuresDropdownValues) {
-				if (dropdownValue.equalsIgnoreCase(item.getText())) {
-					System.out.println(item.getText());
-					wait.until(ExpectedConditions.elementToBeClickable(item)).click();
-					return;
-				}
-			}
-		}
+		elementUtils.selectByText(dropdownValue, DataStructuresDropdownValues);
 	}
+
 }

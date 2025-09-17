@@ -1,12 +1,9 @@
 package PageObjects;
 
 import java.time.Duration;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -14,13 +11,14 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import Utilities.configReader;
+import Utilities.ElementUtils;
 import Utilities.excelReader;
 
 public class RegisterPage {
 
 	private WebDriver driver;
 	private WebDriverWait wait;
+	private ElementUtils elementUtils;
 	public static String username;
 	private String password;
 	private String passwordConfirmation;
@@ -52,27 +50,25 @@ public class RegisterPage {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 		this.wait = new WebDriverWait(driver, Duration.ofSeconds(30)); // Initialize WebDriverWait with a timeout
+		elementUtils  = new ElementUtils(driver);
 	}
 
 	public String getTitleCurrentPage() {
 		return driver.getTitle();
 	}
 
-	public void fetchRegistrationDetailsAndRegister(String filepath, String sheetName) {
-		//can we fetch the username and password inside this method or it has be in step def
+	public void fetchRegistrationDetailsAndRegister(String scenarioName) {
+		List<Map<String, String>> registrationDetails = null;
 		try {
-			List<Map<String, String>> fetchedData = excelReader.getTestData(filepath, sheetName);
-			for (Map<String, String> rowData : fetchedData) {
-				if ("SuccessfulRegistration".equals(rowData.get("ScenarioName"))) {
-					username = rowData.get("Username");
-					password = rowData.get("Password");
-					passwordConfirmation = rowData.get("Password Confirmation");
-					userRegistration(username, password, passwordConfirmation);
-					break;
-				}
-			}
+			registrationDetails = excelReader.getTestData(scenarioName);
 		} catch (Exception e) {
 			e.printStackTrace();
+		}
+		for(Map<String, String> registrationData : registrationDetails) {
+					username = registrationData.get("Username");
+					password = registrationData.get("Password");
+					passwordConfirmation = registrationData.get("Password Confirmation");
+					userRegistration(username, password, passwordConfirmation);
 		}
 	}
 
@@ -86,13 +82,13 @@ public class RegisterPage {
 	public String hoverText(String field) {
 		String tooltipText = null;
 		if (field.equalsIgnoreCase("username")) {
-			tooltipText = Username.getAttribute("validationMessage");
+			tooltipText = elementUtils.hoverText(Username);
 		}
 		if (field.equalsIgnoreCase("password")) {
-			tooltipText = Password.getAttribute("validationMessage");
+			tooltipText = elementUtils.hoverText(Password);
 		}
 		if (field.equalsIgnoreCase("passwordConfirmation")) {
-			tooltipText = PasswordConfirmation.getAttribute("validationMessage");
+			tooltipText = elementUtils.hoverText(PasswordConfirmation);
 		}
 		return tooltipText;
 	}
@@ -122,30 +118,10 @@ public class RegisterPage {
 	}
 
 	public List<String> fetchDataStructuresDropdownValues() {
-		List<String> dropdownValue = new ArrayList<>();
-		if (DataStructuresDropdownValues.isEmpty()) {
-			System.out.println("List is empty");
-		} else {
-			System.out.println(DataStructuresDropdownValues.size());
-			for (WebElement item : DataStructuresDropdownValues) {
-				String text = item.getText();
-				dropdownValue.add(text);
-			}
-		}
-		return dropdownValue;
+		return elementUtils.fetchValuesAsString(DataStructuresDropdownValues);
 	}
 
 	public void selectDropdownValue(String dropdownValue) {
-		if (DataStructuresDropdownValues.isEmpty()) {
-			System.out.println("List is empty");
-		} else {
-			for (WebElement item : DataStructuresDropdownValues) {
-				if (dropdownValue.equalsIgnoreCase(item.getText())) {
-					System.out.println(item.getText());
-					wait.until(ExpectedConditions.elementToBeClickable(item)).click();
-					return;
-				}
-			}
-		}
+		elementUtils.selectByText(dropdownValue, DataStructuresDropdownValues);
 	}
 }

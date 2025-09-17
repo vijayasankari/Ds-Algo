@@ -1,0 +1,1823 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title></title>
+<link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@ce8b10435bcbae260c334c0d0c6b61d2c19b6168/spark/css/spark-style.css" rel="stylesheet" />
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@7cc78ce/spark/js/jsontree.js"></script>
+<style type="text/css"></style></head><body class="spa bdd-report standard">
+  <div class="app">
+    <div class="layout">
+<div class="header navbar">
+<div class="vheader">
+<div class="nav-logo">
+<a href="#">
+<div class="logo" style="background-image: url('https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png')"></div>
+</a>
+</div>
+<ul class="nav-left">
+<li class="search-box">
+<a class="search-toggle" href="#">
+<i class="search-icon fa fa-search"></i>
+<i class="search-icon-close fa fa-close"></i>
+</a>
+</li>
+<li class="search-input"><input id="search-tests" class="form-control" type="text" placeholder="Search..."></li>
+</ul>
+<ul class="nav-right">
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary"></span></a>
+</li>
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary">Sep 16, 2025 10:38:50 PM</span></a>
+</li>
+</ul>
+</div>
+</div><div class="side-nav">
+<div class="side-nav-inner">
+<ul class="side-nav-menu">
+<li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
+<a id="nav-dashboard" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bar-chart"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('test-view')">
+<a id="nav-test" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-list"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('category-view')">
+<a id="nav-category" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-tag"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('exception-view')">
+<a id="nav-exception" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bug"></i></span>
+</a>
+</li>
+</ul>
+</div>
+</div>      <div class="vcontainer">
+        <div class="main-content">
+<div class="container-fluid p-4 view dashboard-view">
+<div class="row">
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Started</p>
+<h3>Sep 16, 2025 10:38:50 PM</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Ended</p>
+<h3>Sep 16, 2025 10:40:59 PM</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-pass">Features Passed</p>
+<h3>0</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-fail">Features Failed</p>
+<h3>1</h3>
+</div></div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Features</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='parent-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='0%'>
+<b>0</b> features passed
+</small>
+</div>
+<div>
+<small data-tooltip='100%'><b>1</b> features failed,
+<b>0</b> skipped, <b data-tooltip='0%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Scenarios</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='child-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='78%'><b>11</b> scenarios passed</small></div>
+<div>
+<small data-tooltip='21%'><b>3</b> scenarios failed,
+<b>0</b> skipped, <b data-tooltip='%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Steps</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='grandchild-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='95%'><b>57</b> steps passed</small></div>
+<div>
+<small data-tooltip='5%'><b>3</b> steps failed,
+<b>0</b> skipped, <b data-tooltip='%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><div class="col-md-12">
+<div class="card"><div class="card-header"><p>Timeline</p></div>
+<div class="card-body pt-0"><div>
+<canvas id="timeline" height="120"></canvas>
+</div></div>
+</div>
+</div></div>
+<script>
+var timeline = {
+"Data Structures Introduction Page validation":126.19
+};
+</script>
+<div class="row">
+<div class="col-lg-6 col-md-12 category-container">
+<div class="card">
+<div class="card-header"><p>Tags</p></div>
+<div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
+<thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead><tbody>
+<tr>
+<td>@DataStructureIntroductionValidation</td>
+<td>11</td>
+<td>3</td>
+<td>0</td>
+<td>0</td>
+<td>78.571%</td>
+</tr>
+<tr>
+<td>@TopicsUnderDataStructures</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@TopicsUnderDataStructuresAsLinks</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@TryEditor</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@TryEditorValidation</td>
+<td>0</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>@Login</td>
+<td>11</td>
+<td>3</td>
+<td>0</td>
+<td>0</td>
+<td>78.571%</td>
+</tr>
+<tr>
+<td>@DataStructures</td>
+<td>11</td>
+<td>3</td>
+<td>0</td>
+<td>0</td>
+<td>78.571%</td>
+</tr>
+<tr>
+<td>@DropDownSelection</td>
+<td>5</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>83.333%</td>
+</tr>
+<tr>
+<td>@TimeComplexityPage</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@PracticeQuestions</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@UsernameHyperlink</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+</div>
+<script>
+var statusGroup = {
+parentCount: 5,
+passParent: 0,
+failParent: 1,
+warningParent: 0,
+skipParent: 0,
+childCount: 5,
+passChild: 11,
+failChild: 3,
+warningChild: 0,
+skipChild: 0,
+infoChild: 0,
+grandChildCount: 5,
+passGrandChild: 57,
+failGrandChild: 3,
+warningGrandChild: 0,
+skipGrandChild: 0,
+infoGrandChild: 0,
+eventsCount: 5,
+};
+</script><div class="test-wrapper row view test-view">
+  <div class="test-list">
+    <div class="test-list-tools">
+<ul class="tools pull-left">
+<li><a href="#"><span class="font-size-14">Tests</span></a></li>
+</ul>
+<ul class="tools text-right">
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
+<ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger"></span></a>
+<div class="dropdown-divider"></div>
+<a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tag"></i></a>
+<ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" href="#">@DataStructureIntroductionValidation</a><a class="dropdown-item" href="#">@TopicsUnderDataStructures</a><a class="dropdown-item" href="#">@TopicsUnderDataStructuresAsLinks</a><a class="dropdown-item" href="#">@TryEditor</a><a class="dropdown-item" href="#">@TryEditorValidation</a><a class="dropdown-item" href="#">@Login</a><a class="dropdown-item" href="#">@DataStructures</a><a class="dropdown-item" href="#">@DropDownSelection</a><a class="dropdown-item" href="#">@TimeComplexityPage</a><a class="dropdown-item" href="#">@PracticeQuestions</a><a class="dropdown-item" href="#">@UsernameHyperlink</a>
+</ul>
+</li>
+</ul>
+</div>    <div class="test-list-wrapper scrollable">
+      <ul class="test-list-item">
+        <li class="test-item"  status="fail" test-id="1"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Data Structures Introduction Page validation</p>
+            <p class="text-sm">
+              <span>10:38:53 PM</span> / <span>00:02:06:190</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Data Structures Introduction Page validation</h5>
+<span class='badge badge-success'>09.16.2025 10:38:53 PM</span>
+<span class='badge badge-danger'>09.16.2025 10:40:59 PM</span>
+<span class='badge badge-default'>00:02:06:190</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-10 m-l-5"> Page navigation, hyperlink access and try editor validation performed</div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="2"><span class="badge log pass-bg mr-2">Pass</span>Verify the topics present in data structures page</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinitions.DataStructuresPageSteps.user_logged_into_application()">
+                <span>Given User logged into application</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.DataStructuresPageSteps.clicks_get_started_button(java.lang.String)">
+                <span>When clicks "Data Structures-Introduction" Get Started button</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.DataStructuresPageSteps.the_user_should_see_below_topics_under_topics_covered_section_of_data_structures_introduction_page(io.cucumber.datatable.DataTable)">
+                <span>Then The user should see below topics under Topics Covered section of Data Structures - Introduction page</span>
+      <div><table class='markup-table table '><tr><td>Time Complexity</td></tr></table>
+      </div>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="9"><span class="badge log pass-bg mr-2">Pass</span>Verify the topics present are in link format</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinitions.DataStructuresPageSteps.user_logged_into_application()">
+                <span>Given User logged into application</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.DataStructuresPageSteps.clicks_get_started_button(java.lang.String)">
+                <span>When clicks "Data Structures-Introduction" Get Started button</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.DataStructuresPageSteps.topics_present_in_the_page_should_be_in_link_format()">
+                <span>Then Topics present in the page should be in link format</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="16"><span class="badge log pass-bg mr-2">Pass</span>Verify that user is able to navigate to Time Complexity page</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinitions.DataStructuresPageSteps.user_logged_into_application()">
+                <span>Given User logged into application</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.DataStructuresPageSteps.clicks_get_started_button(java.lang.String)">
+                <span>When clicks "Data Structures-Introduction" Get Started button</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.DataStructuresPageSteps.the_user_clicks_time_complexity_hyperlink()">
+                <span>When The user clicks Time Complexity hyperlink</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.DataStructuresPageSteps.the_user_should_be_redirected_to_time_complexity_page_of_data_structures_introduction()">
+                <span>Then The user should be redirected to Time Complexity page of Data structures-Introduction</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="24"><span class="badge log pass-bg mr-2">Pass</span>Verify that user is able to navigate to Practice Questions page</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinitions.DataStructuresPageSteps.user_logged_into_application()">
+                <span>Given User logged into application</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.DataStructuresPageSteps.clicks_get_started_button(java.lang.String)">
+                <span>When clicks "Data Structures-Introduction" Get Started button</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.DataStructuresPageSteps.the_user_navigates_to_time_complexity_page()">
+                <span>When the user navigates to Time Complexity page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.DataStructuresPageSteps.clicks_the_practice_questions_hyperlink()">
+                <span>And clicks the Practice Questions hyperlink</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.DataStructuresPageSteps.the_user_should_be_redirected_to_practice_questions_page_of_data_structures_introduction()">
+                <span>Then The user should be redirected to Practice Questions page of Data structures-Introduction</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="33"><span class="badge log pass-bg mr-2">Pass</span>Verify that user is able to navigate to try Editor page</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinitions.DataStructuresPageSteps.user_logged_into_application()">
+                <span>Given User logged into application</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.DataStructuresPageSteps.clicks_get_started_button(java.lang.String)">
+                <span>When clicks "Data Structures-Introduction" Get Started button</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.DataStructuresPageSteps.the_user_navigates_to_time_complexity_page()">
+                <span>When the user navigates to Time Complexity page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.DataStructuresPageSteps.clicks_on_try_here_link()">
+                <span>And clicks on Try Here link</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.DataStructuresPageSteps.the_user_should_be_redirected_to_a_page_having_an_try_editor_with_a_run_button_to_test()">
+                <span>Then The user should be redirected to a page having an try Editor with a Run button to test</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="42"><span class="badge log fail-bg mr-2">Fail</span>Verify that user able to validate python code</div>
+      </div>
+    </div>
+        <div class="scenario_outline ">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="43"><span class="badge log fail-bg mr-2">Fail</span>Verify that user able to validate python code</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 ">
+                  <div class="step pass-bg">
+                    <span>Given User logged into application</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When clicks "Data Structures-Introduction" Get Started button</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When the user navigates to Time Complexity page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And user clicks on Try here link</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And User enters "InvalidCode" in try editor from excel sheet with scenario "TryEditorValidation"</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step fail-bg">
+                    <span>Then The user should able to see the "Alert Message" as mentioned for the scenario "TryEditorValidation" in the excel sheet</span>
+      <div>
+        <textarea disabled class="code-block">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for alert to be present (tried for 30 second(s) with 500 milliseconds interval)
+Build info: version: '4.33.0', revision: '2c6aaad03a'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 139.0.7258.139, chrome: {chromedriverVersion: 139.0.7258.154 (9e0d6b2b47f..., userDataDir: C:\Users\LINGES~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:11547}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:11547/devtoo..., se:cdpVersion: 139.0.7258.139, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 93db631c943c0807ad0e5b76ad940852
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at PageObjects.DataStructuresPage.fetchResult(DataStructuresPage.java:137)
+	at stepDefinitions.DataStructuresPageSteps.the_user_should_able_to_see_the_as_mentioned_for_the_scenario_in_the_excel_sheet(DataStructuresPageSteps.java:108)
+	at ✽.The user should able to see the "Alert Message" as mentioned for the scenario "TryEditorValidation" in the excel sheet(file:///C:/Users/Lingesh%20Raja/git/Ds_AlGO_BDD/src/test/resources/features/dataStructuresIntroductionPage.feature:40)
+</textarea>
+      
+      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="53"><span class="badge log fail-bg mr-2">Fail</span>Verify that user able to validate python code</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 ">
+                  <div class="step pass-bg">
+                    <span>Given User logged into application</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When clicks "Data Structures-Introduction" Get Started button</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When the user navigates to Time Complexity page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And user clicks on Try here link</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And User enters "ValidCode" in try editor from excel sheet with scenario "TryEditorValidation"</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step fail-bg">
+                    <span>Then The user should able to see the "Console Output" as mentioned for the scenario "TryEditorValidation" in the excel sheet</span>
+      <div>
+        <textarea disabled class="code-block">java.lang.AssertionError: Mismatch in actual and expected result expected [Hello] but found []
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1590)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+	at org.testng.Assert.assertEquals(Assert.java:132)
+	at org.testng.Assert.assertEquals(Assert.java:656)
+	at stepDefinitions.DataStructuresPageSteps.the_user_should_able_to_see_the_as_mentioned_for_the_scenario_in_the_excel_sheet(DataStructuresPageSteps.java:120)
+	at ✽.The user should able to see the "Console Output" as mentioned for the scenario "TryEditorValidation" in the excel sheet(file:///C:/Users/Lingesh%20Raja/git/Ds_AlGO_BDD/src/test/resources/features/dataStructuresIntroductionPage.feature:40)
+</textarea>
+      
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="63"><span class="badge log fail-bg mr-2">Fail</span>Verify that on clicking dropdown values user able to navigate to module pages</div>
+      </div>
+    </div>
+        <div class="scenario_outline ">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="64"><span class="badge log fail-bg mr-2">Fail</span>Verify that on clicking dropdown values user able to navigate to module pages</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 ">
+                  <div class="step pass-bg">
+                    <span>Given User logged into application</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When clicks "Data Structures-Introduction" Get Started button</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When The user selects "Array" from the Data Structures dropdown of Data Structures Introduction page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step fail-bg">
+                    <span>Then The user should be able to navigate to respective "Array" page</span>
+      <div>
+        <textarea disabled class="code-block">java.lang.AssertionError: User is not redirected to Array page expected [Array] but found [Data Structures-Introduction]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1590)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+	at org.testng.Assert.assertEquals(Assert.java:132)
+	at org.testng.Assert.assertEquals(Assert.java:656)
+	at stepDefinitions.DataStructuresPageSteps.the_user_should_be_able_to_navigate_to_respective_page(DataStructuresPageSteps.java:132)
+	at ✽.The user should be able to navigate to respective "Array" page(file:///C:/Users/Lingesh%20Raja/git/Ds_AlGO_BDD/src/test/resources/features/dataStructuresIntroductionPage.feature:50)
+</textarea>
+      
+      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="72"><span class="badge log pass-bg mr-2">Pass</span>Verify that on clicking dropdown values user able to navigate to module pages</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given User logged into application</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When clicks "Data Structures-Introduction" Get Started button</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When The user selects "Linked List" from the Data Structures dropdown of Data Structures Introduction page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then The user should be able to navigate to respective "Linked List" page</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="80"><span class="badge log pass-bg mr-2">Pass</span>Verify that on clicking dropdown values user able to navigate to module pages</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given User logged into application</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When clicks "Data Structures-Introduction" Get Started button</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When The user selects "Stack" from the Data Structures dropdown of Data Structures Introduction page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then The user should be able to navigate to respective "Stack" page</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="88"><span class="badge log pass-bg mr-2">Pass</span>Verify that on clicking dropdown values user able to navigate to module pages</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given User logged into application</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When clicks "Data Structures-Introduction" Get Started button</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When The user selects "Queue" from the Data Structures dropdown of Data Structures Introduction page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then The user should be able to navigate to respective "Queue" page</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="96"><span class="badge log pass-bg mr-2">Pass</span>Verify that on clicking dropdown values user able to navigate to module pages</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given User logged into application</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When clicks "Data Structures-Introduction" Get Started button</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When The user selects "Tree" from the Data Structures dropdown of Data Structures Introduction page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then The user should be able to navigate to respective "Tree" page</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="104"><span class="badge log pass-bg mr-2">Pass</span>Verify that on clicking dropdown values user able to navigate to module pages</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given User logged into application</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When clicks "Data Structures-Introduction" Get Started button</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When The user selects "Graph" from the Data Structures dropdown of Data Structures Introduction page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then The user should be able to navigate to respective "Graph" page</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="112"><span class="badge log pass-bg mr-2">Pass</span>Verify that page is reloaded on clicking username hyperlink on the top right</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinitions.DataStructuresPageSteps.user_logged_into_application()">
+                <span>Given User logged into application</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.DataStructuresPageSteps.clicks_get_started_button(java.lang.String)">
+                <span>When clicks "Data Structures-Introduction" Get Started button</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.DataStructuresPageSteps.the_user_clicks_on_username_hyperlink_displayed_at_the_top_right_corner()">
+                <span>When The user clicks on username hyperlink displayed at the top right corner</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.DataStructuresPageSteps.the_user_should_be_able_to_see_that_the_current_page_is_reloaded()">
+                <span>Then The user should be able to see that the current page is reloaded</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+<div class="test-content scrollable">
+<div class="test-content-tools">
+<ul><li><a class="back-to-test" href="#"><i class="fa fa-arrow-left"></i></a></li></ul>
+</div>
+<div class="test-content-detail"><div class="detail-body"></div></div>
+</div></div>
+<div class="test-wrapper row view category-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Category</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">11</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>11</span>
+<span class='badge log badge-danger'>3</span>
+</span>
+<p class="name">@DataStructureIntroductionValidation</p>
+<p class="duration text-sm">14 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@DataStructureIntroductionValidation</h4>
+<span status="pass" class='badge log pass-bg'>11 passed</span>
+<span status="fail" class='badge log badge-danger'>3 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:38:53 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='2'>Verify the topics present in data structures page</a>
+<div class="">
+<span class="badge badge-default">Data Structures Introduction Page validation.Verify the topics present in data structures page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:39:00 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='9'>Verify the topics present are in link format</a>
+<div class="">
+<span class="badge badge-default">Data Structures Introduction Page validation.Verify the topics present are in link format</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:39:05 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='16'>Verify that user is able to navigate to Time Complexity page</a>
+<div class="">
+<span class="badge badge-default">Data Structures Introduction Page validation.Verify that user is able to navigate to Time Complexity page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:39:11 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='24'>Verify that user is able to navigate to Practice Questions page</a>
+<div class="">
+<span class="badge badge-default">Data Structures Introduction Page validation.Verify that user is able to navigate to Practice Questions page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:39:17 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='33'>Verify that user is able to navigate to try Editor page</a>
+<div class="">
+<span class="badge badge-default">Data Structures Introduction Page validation.Verify that user is able to navigate to try Editor page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>22:39:24 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='43'>Verify that user able to validate python code</a>
+<div class="">
+<span class="badge badge-default">Data Structures Introduction Page validation.Verify that user able to validate python code</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>22:40:04 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='53'>Verify that user able to validate python code</a>
+<div class="">
+<span class="badge badge-default">Data Structures Introduction Page validation.Verify that user able to validate python code</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>22:40:14 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='64'>Verify that on clicking dropdown values user able to navigate to module pages</a>
+<div class="">
+<span class="badge badge-default">Data Structures Introduction Page validation.Verify that on clicking dropdown values user able to navigate to module pages</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:40:20 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='72'>Verify that on clicking dropdown values user able to navigate to module pages</a>
+<div class="">
+<span class="badge badge-default">Data Structures Introduction Page validation.Verify that on clicking dropdown values user able to navigate to module pages</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:40:27 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='80'>Verify that on clicking dropdown values user able to navigate to module pages</a>
+<div class="">
+<span class="badge badge-default">Data Structures Introduction Page validation.Verify that on clicking dropdown values user able to navigate to module pages</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:40:33 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='88'>Verify that on clicking dropdown values user able to navigate to module pages</a>
+<div class="">
+<span class="badge badge-default">Data Structures Introduction Page validation.Verify that on clicking dropdown values user able to navigate to module pages</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:40:40 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='96'>Verify that on clicking dropdown values user able to navigate to module pages</a>
+<div class="">
+<span class="badge badge-default">Data Structures Introduction Page validation.Verify that on clicking dropdown values user able to navigate to module pages</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:40:47 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='104'>Verify that on clicking dropdown values user able to navigate to module pages</a>
+<div class="">
+<span class="badge badge-default">Data Structures Introduction Page validation.Verify that on clicking dropdown values user able to navigate to module pages</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:40:54 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='112'>Verify that page is reloaded on clicking username hyperlink on the top right</a>
+<div class="">
+<span class="badge badge-default">Data Structures Introduction Page validation.Verify that page is reloaded on clicking username hyperlink on the top right</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+</span>
+<p class="name">@TopicsUnderDataStructures</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@TopicsUnderDataStructures</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:38:53 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='2'>Verify the topics present in data structures page</a>
+<div class="">
+<span class="badge badge-default">Data Structures Introduction Page validation.Verify the topics present in data structures page</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+</span>
+<p class="name">@TopicsUnderDataStructuresAsLinks</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@TopicsUnderDataStructuresAsLinks</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:39:00 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='9'>Verify the topics present are in link format</a>
+<div class="">
+<span class="badge badge-default">Data Structures Introduction Page validation.Verify the topics present are in link format</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+</span>
+<p class="name">@TryEditor</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@TryEditor</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:39:17 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='33'>Verify that user is able to navigate to try Editor page</a>
+<div class="">
+<span class="badge badge-default">Data Structures Introduction Page validation.Verify that user is able to navigate to try Editor page</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>2</span>
+</span>
+<p class="name">@TryEditorValidation</p>
+<p class="duration text-sm">2 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@TryEditorValidation</h4>
+<span status="fail" class='badge log badge-danger'>2 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>22:39:24 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='43'>Verify that user able to validate python code</a>
+<div class="">
+<span class="badge badge-default">Data Structures Introduction Page validation.Verify that user able to validate python code</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>22:40:04 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='53'>Verify that user able to validate python code</a>
+<div class="">
+<span class="badge badge-default">Data Structures Introduction Page validation.Verify that user able to validate python code</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>11</span>
+<span class='badge log badge-danger'>3</span>
+</span>
+<p class="name">@Login</p>
+<p class="duration text-sm">14 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@Login</h4>
+<span status="pass" class='badge log pass-bg'>11 passed</span>
+<span status="fail" class='badge log badge-danger'>3 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:38:53 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='2'>Verify the topics present in data structures page</a>
+<div class="">
+<span class="badge badge-default">Data Structures Introduction Page validation.Verify the topics present in data structures page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:39:00 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='9'>Verify the topics present are in link format</a>
+<div class="">
+<span class="badge badge-default">Data Structures Introduction Page validation.Verify the topics present are in link format</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:39:05 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='16'>Verify that user is able to navigate to Time Complexity page</a>
+<div class="">
+<span class="badge badge-default">Data Structures Introduction Page validation.Verify that user is able to navigate to Time Complexity page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:39:11 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='24'>Verify that user is able to navigate to Practice Questions page</a>
+<div class="">
+<span class="badge badge-default">Data Structures Introduction Page validation.Verify that user is able to navigate to Practice Questions page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:39:17 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='33'>Verify that user is able to navigate to try Editor page</a>
+<div class="">
+<span class="badge badge-default">Data Structures Introduction Page validation.Verify that user is able to navigate to try Editor page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>22:39:24 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='43'>Verify that user able to validate python code</a>
+<div class="">
+<span class="badge badge-default">Data Structures Introduction Page validation.Verify that user able to validate python code</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>22:40:04 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='53'>Verify that user able to validate python code</a>
+<div class="">
+<span class="badge badge-default">Data Structures Introduction Page validation.Verify that user able to validate python code</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>22:40:14 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='64'>Verify that on clicking dropdown values user able to navigate to module pages</a>
+<div class="">
+<span class="badge badge-default">Data Structures Introduction Page validation.Verify that on clicking dropdown values user able to navigate to module pages</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:40:20 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='72'>Verify that on clicking dropdown values user able to navigate to module pages</a>
+<div class="">
+<span class="badge badge-default">Data Structures Introduction Page validation.Verify that on clicking dropdown values user able to navigate to module pages</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:40:27 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='80'>Verify that on clicking dropdown values user able to navigate to module pages</a>
+<div class="">
+<span class="badge badge-default">Data Structures Introduction Page validation.Verify that on clicking dropdown values user able to navigate to module pages</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:40:33 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='88'>Verify that on clicking dropdown values user able to navigate to module pages</a>
+<div class="">
+<span class="badge badge-default">Data Structures Introduction Page validation.Verify that on clicking dropdown values user able to navigate to module pages</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:40:40 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='96'>Verify that on clicking dropdown values user able to navigate to module pages</a>
+<div class="">
+<span class="badge badge-default">Data Structures Introduction Page validation.Verify that on clicking dropdown values user able to navigate to module pages</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:40:47 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='104'>Verify that on clicking dropdown values user able to navigate to module pages</a>
+<div class="">
+<span class="badge badge-default">Data Structures Introduction Page validation.Verify that on clicking dropdown values user able to navigate to module pages</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:40:54 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='112'>Verify that page is reloaded on clicking username hyperlink on the top right</a>
+<div class="">
+<span class="badge badge-default">Data Structures Introduction Page validation.Verify that page is reloaded on clicking username hyperlink on the top right</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>11</span>
+<span class='badge log badge-danger'>3</span>
+</span>
+<p class="name">@DataStructures</p>
+<p class="duration text-sm">14 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@DataStructures</h4>
+<span status="pass" class='badge log pass-bg'>11 passed</span>
+<span status="fail" class='badge log badge-danger'>3 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:38:53 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='2'>Verify the topics present in data structures page</a>
+<div class="">
+<span class="badge badge-default">Data Structures Introduction Page validation.Verify the topics present in data structures page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:39:00 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='9'>Verify the topics present are in link format</a>
+<div class="">
+<span class="badge badge-default">Data Structures Introduction Page validation.Verify the topics present are in link format</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:39:05 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='16'>Verify that user is able to navigate to Time Complexity page</a>
+<div class="">
+<span class="badge badge-default">Data Structures Introduction Page validation.Verify that user is able to navigate to Time Complexity page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:39:11 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='24'>Verify that user is able to navigate to Practice Questions page</a>
+<div class="">
+<span class="badge badge-default">Data Structures Introduction Page validation.Verify that user is able to navigate to Practice Questions page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:39:17 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='33'>Verify that user is able to navigate to try Editor page</a>
+<div class="">
+<span class="badge badge-default">Data Structures Introduction Page validation.Verify that user is able to navigate to try Editor page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>22:39:24 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='43'>Verify that user able to validate python code</a>
+<div class="">
+<span class="badge badge-default">Data Structures Introduction Page validation.Verify that user able to validate python code</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>22:40:04 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='53'>Verify that user able to validate python code</a>
+<div class="">
+<span class="badge badge-default">Data Structures Introduction Page validation.Verify that user able to validate python code</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>22:40:14 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='64'>Verify that on clicking dropdown values user able to navigate to module pages</a>
+<div class="">
+<span class="badge badge-default">Data Structures Introduction Page validation.Verify that on clicking dropdown values user able to navigate to module pages</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:40:20 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='72'>Verify that on clicking dropdown values user able to navigate to module pages</a>
+<div class="">
+<span class="badge badge-default">Data Structures Introduction Page validation.Verify that on clicking dropdown values user able to navigate to module pages</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:40:27 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='80'>Verify that on clicking dropdown values user able to navigate to module pages</a>
+<div class="">
+<span class="badge badge-default">Data Structures Introduction Page validation.Verify that on clicking dropdown values user able to navigate to module pages</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:40:33 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='88'>Verify that on clicking dropdown values user able to navigate to module pages</a>
+<div class="">
+<span class="badge badge-default">Data Structures Introduction Page validation.Verify that on clicking dropdown values user able to navigate to module pages</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:40:40 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='96'>Verify that on clicking dropdown values user able to navigate to module pages</a>
+<div class="">
+<span class="badge badge-default">Data Structures Introduction Page validation.Verify that on clicking dropdown values user able to navigate to module pages</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:40:47 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='104'>Verify that on clicking dropdown values user able to navigate to module pages</a>
+<div class="">
+<span class="badge badge-default">Data Structures Introduction Page validation.Verify that on clicking dropdown values user able to navigate to module pages</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:40:54 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='112'>Verify that page is reloaded on clicking username hyperlink on the top right</a>
+<div class="">
+<span class="badge badge-default">Data Structures Introduction Page validation.Verify that page is reloaded on clicking username hyperlink on the top right</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>5</span>
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">@DropDownSelection</p>
+<p class="duration text-sm">6 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@DropDownSelection</h4>
+<span status="pass" class='badge log pass-bg'>5 passed</span>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>22:40:14 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='64'>Verify that on clicking dropdown values user able to navigate to module pages</a>
+<div class="">
+<span class="badge badge-default">Data Structures Introduction Page validation.Verify that on clicking dropdown values user able to navigate to module pages</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:40:20 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='72'>Verify that on clicking dropdown values user able to navigate to module pages</a>
+<div class="">
+<span class="badge badge-default">Data Structures Introduction Page validation.Verify that on clicking dropdown values user able to navigate to module pages</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:40:27 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='80'>Verify that on clicking dropdown values user able to navigate to module pages</a>
+<div class="">
+<span class="badge badge-default">Data Structures Introduction Page validation.Verify that on clicking dropdown values user able to navigate to module pages</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:40:33 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='88'>Verify that on clicking dropdown values user able to navigate to module pages</a>
+<div class="">
+<span class="badge badge-default">Data Structures Introduction Page validation.Verify that on clicking dropdown values user able to navigate to module pages</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:40:40 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='96'>Verify that on clicking dropdown values user able to navigate to module pages</a>
+<div class="">
+<span class="badge badge-default">Data Structures Introduction Page validation.Verify that on clicking dropdown values user able to navigate to module pages</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:40:47 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='104'>Verify that on clicking dropdown values user able to navigate to module pages</a>
+<div class="">
+<span class="badge badge-default">Data Structures Introduction Page validation.Verify that on clicking dropdown values user able to navigate to module pages</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+</span>
+<p class="name">@TimeComplexityPage</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@TimeComplexityPage</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:39:05 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='16'>Verify that user is able to navigate to Time Complexity page</a>
+<div class="">
+<span class="badge badge-default">Data Structures Introduction Page validation.Verify that user is able to navigate to Time Complexity page</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+</span>
+<p class="name">@PracticeQuestions</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@PracticeQuestions</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:39:11 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='24'>Verify that user is able to navigate to Practice Questions page</a>
+<div class="">
+<span class="badge badge-default">Data Structures Introduction Page validation.Verify that user is able to navigate to Practice Questions page</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+</span>
+<p class="name">@UsernameHyperlink</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@UsernameHyperlink</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:40:54 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='112'>Verify that page is reloaded on clicking username hyperlink on the top right</a>
+<div class="">
+<span class="badge badge-default">Data Structures Introduction Page validation.Verify that page is reloaded on clicking username hyperlink on the top right</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div><div class="test-wrapper row view exception-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Exception</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">2</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>2</span>
+</span>
+<p class="name">java.lang.AssertionError</p>
+<p class="duration text-sm">2 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>java.lang.AssertionError</h4>
+<span status="fail" class='badge log badge-danger'>2 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>22:40:14 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='61'>Then The user should able to see the "Console Output" as mentioned for the scenario "TryEditorValidation" in the excel sheet</a>
+<div class="">
+<span class="badge badge-default">Data Structures Introduction Page validation.Verify that user able to validate python code.Then The user should able to see the "Console Output" as mentioned for the scenario "TryEditorValidation" in the excel sheet</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>22:40:20 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='70'>Then The user should be able to navigate to respective "Array" page</a>
+<div class="">
+<span class="badge badge-default">Data Structures Introduction Page validation.Verify that on clicking dropdown values user able to navigate to module pages.Then The user should be able to navigate to respective "Array" page</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">org.openqa.selenium.TimeoutException</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>org.openqa.selenium.TimeoutException</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>22:39:34 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='51'>Then The user should able to see the "Alert Message" as mentioned for the scenario "TryEditorValidation" in the excel sheet</a>
+<div class="">
+<span class="badge badge-default">Data Structures Introduction Page validation.Verify that user able to validate python code.Then The user should able to see the "Alert Message" as mentioned for the scenario "TryEditorValidation" in the excel sheet</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div>        </div>
+      </div>
+    </div>
+  </div>
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@c05cd28cde1617b9d0c05a831daff6cb97fd9fd5/spark/js/spark-script.js"></script>
+<script type="text/javascript"></script></body>
+</html>

@@ -6,10 +6,8 @@ import java.util.Properties;
 
 public class configReader {
     private static Properties prop = new Properties();
-    public static String filepath;
-    public static String SheetName;
 
-    static {
+	static {
         try (FileInputStream ip = new FileInputStream("./src/test/resources/Config/config.properties")) {
             prop.load(ip);
         } catch (IOException e) {
@@ -20,4 +18,5 @@ public class configReader {
     public static String getProperty(String key) {
         return prop.getProperty(key);
     }
+    
 }

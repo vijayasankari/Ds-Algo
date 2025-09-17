@@ -4,7 +4,7 @@ Feature: User accessibility verification of Home page after Sign in
   Sign out verified
 
   Background: 
-    Given User provides valid credentials and navigated to Home page
+    Given User logged into application
 
   @HomePageNumpyNinjaLabelAfterSignIn @Login
   Scenario: Verify that page is reloaded on clicking NumpyNinja label

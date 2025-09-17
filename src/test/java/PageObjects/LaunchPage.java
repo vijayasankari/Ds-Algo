@@ -24,9 +24,7 @@ public class LaunchPage {
 	}
 
 	public void GetStartedClick() {
-		if (GetStartedButton.isDisplayed()) {
-			wait.until(ExpectedConditions.elementToBeClickable(GetStartedButton)).click();
-		}
+		wait.until(ExpectedConditions.elementToBeClickable(GetStartedButton)).click();
 	}
 
 	public String getTitleCurrentPage() {

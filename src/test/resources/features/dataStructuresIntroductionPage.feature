@@ -1,10 +1,19 @@
-@DataStructureIntroductionValidation
+@DataStructureIntroductionValidation @Login
 Feature: Data Structures Introduction Page validation
   Page navigation, hyperlink access and try editor validation performed
 
-  Background: 
-    Given User logged into DsAlgo portal
-    And clicks "Data Structures-Introduction" Get Started button
+  Background: User logged into application
+    Given User logged into application
+    When clicks "Data Structures-Introduction" Get Started button
+
+  @DataStructures @TopicsUnderDataStructures @Login
+  Scenario: Verify the topics present in data structures page
+    Then The user should see below topics under Topics Covered section of Data Structures - Introduction page
+     | Time Complexity |
+
+  @DataStructures @TopicsUnderDataStructuresAsLinks @Login
+  Scenario: Verify the topics present are in link format
+    Then Topics present in the page should be in link format
 
   @DataStructures @TimeComplexityPage @Login
   Scenario: Verify that user is able to navigate to Time Complexity page
@@ -27,13 +36,13 @@ Feature: Data Structures Introduction Page validation
   Scenario Outline: Verify that user able to validate python code
     When the user navigates to Time Complexity page
     And user clicks on Try here link
-    And User enters "<python code>" in try editor from excel sheet
-    Then The user should able to see the "<result>"
+    And User enters "<python code>" in try editor from excel sheet with scenario "TryEditorValidation"
+    Then The user should able to see the "<result>" as mentioned for the scenario "TryEditorValidation" in the excel sheet
 
     Examples: 
-      | python code |  | result         |
-      | InvalidCode |  | Alert Message  |
-      | ValidCode   |  | Console Output |
+      | python code | result         |
+      | InvalidCode | Alert Message  |
+      | ValidCode   | Console Output |
 
   @DataStructures @DropDownSelection @Login
   Scenario Outline: Verify that on clicking dropdown values user able to navigate to module pages
@@ -42,7 +51,7 @@ Feature: Data Structures Introduction Page validation
 
     Examples: 
       | module      |
-      | Arrays      |
+      | Array       |
       | Linked List |
       | Stack       |
       | Queue       |

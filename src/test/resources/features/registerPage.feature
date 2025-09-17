@@ -4,7 +4,7 @@ Feature: Registration page validation
 
   Background: 
     Given User navigates to registration page from home page
-    
+
   @RegisterPageHoverTextValidation
   Scenario Outline: Verify that user receives hovertext message for all empty fields during registration
     When The user clicks Register button after entering "<username>" and "<password>" and "<passwordConfirmation>"
@@ -78,6 +78,6 @@ Feature: Registration page validation
 
   @SuccessfulRegistration
   Scenario: Verify that user is able to land on Homepage after registration with valid fields
-    When The user clicks Register button after entering valid values from excel sheet
+    When The user clicks Register button after entering valid values from excel sheet with scenario "SuccessfulRegistration"
     Then The user should be redirected to Home Page of DS Algo
     And message should be displayed as "New Account Created. You are logged in as "
