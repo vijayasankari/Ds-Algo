@@ -14,28 +14,32 @@ import java.time.Duration;
 
 public class driverFactory {
 
-	private static String url;
+	
 	private static String browser;
-	public static WebDriver driver;
+	//public static WebDriver driver;
+	private static ThreadLocal<WebDriver> driver=new ThreadLocal<WebDriver>();
+//	private static ThreadLocal<String> threadlocalbrowser=new ThreadLocal<String>();
 
-	public static WebDriver getDriver() {
+	public static void setDriver() {
 		try {
-			url = configReader.getProperty("url");
-			System.out.println("DF: "+url);
+			
+			
 			browser = configReader.getBrowserType();
-			System.out.println("Driverfact"+browser);
+		
+			//System.out.println("Driverfact"+threadlocalbrowser.get());
+			
 			if (browser.equalsIgnoreCase("chrome")) {
 				ChromeOptions chromeOptions = new ChromeOptions();
-				chromeOptions.setPageLoadStrategy(PageLoadStrategy.NORMAL);
-				driver = new ChromeDriver(chromeOptions); // Initialize the driver (e.g., for Chrome)
+				chromeOptions.setPageLoadStrategy(PageLoadStrategy.EAGER);
+				driver.set(new ChromeDriver(chromeOptions)); // Initialize the driver (e.g., for Chrome)
 			} else if (browser.equalsIgnoreCase("edge")) {
 				System.out.println("DFEdge: "+browser);
 				EdgeOptions edgeOptions=new EdgeOptions();
-				driver = new EdgeDriver(edgeOptions);
+				driver.set(new EdgeDriver());
 			} else if (browser.equalsIgnoreCase("firefox")) {
-				driver = new FirefoxDriver();
+				driver.set(new FirefoxDriver());
 			} else {
-				driver = null;
+				driver.set(null);
 				System.out.println("Invalid Browser Type");
 			}
 		} catch (Exception e) {
@@ -43,9 +47,24 @@ public class driverFactory {
 			e.printStackTrace();
 		}
 
-		driver.get(url);
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
-		driver.manage().window().maximize();
-		return driver;
+	
+		getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+		getDriver().manage().window().maximize();
+		
 	}
+	public static WebDriver getDriver() {
+		return driver.get();
+		
+	}
+	
+	public static void quitDriver() {
+		if (driver.get()!= null) {
+			driver.get().quit();
+			System.out.println("Quitting");
+			driver.remove();
+		}
+	}
+	
+	
+	
 }

@@ -1,4 +1,4 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:sccation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>Ds_AlGO_BDD</groupId>
   <artifactId>Ds_AlGO_BDD</artifactId>
@@ -12,7 +12,7 @@
 <dependency>
     <groupId>org.seleniumhq.selenium</groupId>
     <artifactId>selenium-java</artifactId>
-    <version>4.33.0</version>
+    <version>4.35.0</version>
 </dependency>
 <dependency>
     <groupId>io.cucumber</groupId>
@@ -71,6 +71,18 @@
     <artifactId>maven-surefire-plugin</artifactId>
     <version>3.5.3</version>
 </dependency>
+<!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-api -->
+<dependency>
+    <groupId>org.apache.logging.log4j</groupId>
+    <artifactId>log4j-api</artifactId>
+    <version>2.25.1</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
+<dependency>
+    <groupId>org.apache.logging.log4j</groupId>
+    <artifactId>log4j-core</artifactId>
+    <version>2.25.1</version>
+</dependency>
   </dependencies>
   <build>
   <plugins>
@@ -87,6 +99,10 @@
 	<suiteXMLFile>Testng.xml</suiteXMLFile>
 	</suiteXmlFiles>
 	
+	<properties>
+	<dataproviderthreadcount>30</dataproviderthreadcount>
+	<threadCount>7</threadCount></properties>
+	
 	<systemPropertyVariables>
 	<browser>chrome</browser>
 	</systemPropertyVariables>
@@ -100,12 +116,13 @@
   </plugins></build>
   
  <profiles>
-  <profile><id>chrome</id>
-  <properties><browser>chrome</browser></properties></profile>
+ 
   <profile><id>edge</id>
   <properties><browser>edge</browser></properties></profile>
   <profile><id>firefox</id>
   <properties><browser>firefox</browser></properties></profile>
+  <profile><id>chrome</id>
+  <properties><browser>chrome</browser></properties></profile>
   </profiles>
   
   

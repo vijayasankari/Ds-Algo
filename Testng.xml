@@ -1,5 +1,5 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
-<suite name="MyTestNGSuite">
+<suite name="MyTestNGSuite" parallel="methods" thread-count="7">
   <test name="CrossBrowserTest">
   <parameter name="Browser" value="${browser}"></parameter>
     <classes>
